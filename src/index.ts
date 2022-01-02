@@ -1,23 +1,29 @@
 import { Midi } from '@tonejs/midi'
+import Note from './Note'
 import * as fs from 'fs'
 
 // create a new midi file
 var midi = new Midi()
 // add a track
 const track = midi.addTrack()
-track.addNote({
+track
+  .addNote({
     midi: 60,
     time: 0,
     duration: 0.2,
-  }).addNote({
+  })
+  .addNote({
     name: 'C5',
     time: 0.3,
     duration: 0.1,
-  }).addCC({
+  })
+  .addCC({
     number: 64,
     value: 127,
-    time: 0.2,
+    time: 10,
   })
 
+const note = new Note(60, 0.2)
+
 // write the output
-fs.writeFileSync('output.mid', new Buffer(midi.toArray()))
+fs.writeFileSync('./outputs/output1.mid', new Buffer(midi.toArray()))
