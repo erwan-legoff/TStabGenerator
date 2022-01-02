@@ -1,0 +1,29 @@
+{
+  "name": "tstabgenerator",
+  "version": "1.0.0",
+  "description": "A tiny project to generate tab pseudo randomly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node index.ts",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erwan-legoff/TStabGenerator.git"
+  },
+  "author": "erwil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erwan-legoff/TStabGenerator/issues"
+  },
+  "homepage": "https://github.com/erwan-legoff/TStabGenerator#readme",
+  "dependencies": {
+    "@tonejs/midi": "^2.0.27",
+    "install": "^0.13.0",
+    "nodemon": "^2.0.15",
+    "npm": "^8.3.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
+}
