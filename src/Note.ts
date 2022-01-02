@@ -7,10 +7,12 @@ export default class Note {
   // declare variables
   private midi: number
   private duration: number
+  private time: number
 
-  constructor(midi: number, duration: number) {
+  constructor(midi: number, duration: number, time: number = 0) {
     this.midi = midi
     this.duration = duration
+    this.time = time
   }
   // A constructor to create a note from its name in string and a duration in number.
   static fromString(name: string, duration: number): Note {
@@ -22,8 +24,7 @@ export default class Note {
     const noteName = name.toUpperCase()
     const octave = parseInt(noteName.slice(-1))
     const noteLetter = noteName.slice(0, -1)
-    const midi = Note.noteLetterToMidiNumber(noteLetter) + 12 * (octave + 1)
-    return midi
+    return Note.noteLetterToMidiNumber(noteLetter) + 12 * (octave + 1)
   }
   /**
    * * A function to get the midi value from a note letter in string.
@@ -31,14 +32,16 @@ export default class Note {
    * @returns
    */
   private static noteLetterToMidiNumber(name: string): number {
-    const note: string = name.toUpperCase()
     // use noteEngEnums to get the midi value
-    return noteEngEnums[note as keyof typeof noteEngEnums]
+    return noteEngEnums[name.toUpperCase() as keyof typeof noteEngEnums]
   }
   getMidi(): number {
     return this.midi
   }
   getDuration(): number {
     return this.duration
+  }
+  getTime(): number {
+    return this.time
   }
 }
