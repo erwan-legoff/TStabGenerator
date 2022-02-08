@@ -44,4 +44,7 @@ export default class Note {
   getTime(): number {
     return this.time
   }
+  addTime(time: number): void {
+    this.time += time
+  }
 }
