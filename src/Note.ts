@@ -19,14 +19,12 @@ class Note {
    * @returns
    */
   private static noteLetterToMidiNumber(name: string): number {
-    // use noteEngEnums to get the midi value
     return noteEngEnums[name.toUpperCase() as keyof typeof noteEngEnums]
   }
 
   static noteNameToMidi(name: string): number {
-    const noteName = name.toUpperCase()
-    const octave = parseInt(noteName.slice(-1))
-    const noteLetter = noteName.slice(0, -1)
+    const octave = parseInt(name.slice(-1))
+    const noteLetter = name.slice(0, -1).toUpperCase()
     return Note.noteLetterToMidiNumber(noteLetter) + 12 * (octave + 1)
   }
 }
