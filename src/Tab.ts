@@ -1,4 +1,4 @@
-import MidiNote from './MidiNote';
+import NoteOne from './notes/NoteOne';
 import TabLine from './TabLine'
 import TabNote from './TabNote';
 
@@ -6,6 +6,6 @@ export interface Tab {
   getName(): string
     getMusic(): TabLine[]
     
-    addNote(note: MidiNote, stringNumber: Number): void
+    addNote(note: NoteOne, stringNumber: number): void
     addTabNote(tabNote: TabNote): void
 }

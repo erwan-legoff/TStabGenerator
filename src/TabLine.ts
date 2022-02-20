@@ -1,4 +1,5 @@
-import MidiNote from './MidiNote'
+import NoteOne from './notes/NoteOne'
+import PlayedNote from './notes/PlayedNoteOne'
 import TabNote from './TabNote'
 /**
  ** A class to represent a group of music tabs that are played in a particular order
@@ -6,17 +7,19 @@ import TabNote from './TabNote'
  ** it has a tonic note and a list of tabNotes.
  */
 export default class TabLine {
-  tonic: MidiNote
+  tonic: NoteOne
   melody: TabNote[]
   maxCaseNumber: number
+  mustCorrectTime: boolean
   constructor(
-    tonic: MidiNote,
-    melody: MidiNote[],
+    tonic: NoteOne,
+    melody: PlayedNote[],
     maxCaseNumber: number,
     mustCorrectTime: boolean = false
   ) {
     this.tonic = tonic
     this.maxCaseNumber = maxCaseNumber
+    this.mustCorrectTime = mustCorrectTime
     this.melody = TabLine.fromNotesToTabNotes(
       melody,
       tonic,
@@ -26,31 +29,40 @@ export default class TabLine {
   }
   // A function to convert a list of notes to a list of tabNotes.
   private static fromNotesToTabNotes(
-    notes: MidiNote[],
-    tonic: MidiNote,
+    notes: PlayedNote[],
+    tonic: NoteOne,
     maxCaseNumber: number,
     mustCorrectTime: boolean = false
   ): TabNote[] {
     const tabNotes: TabNote[] = [] //  On doit ajouter le temps de chaque note précédente
-    var previousNote: MidiNote = notes[0]
-    var currentNote: MidiNote = notes[0]
+    var previousNote: PlayedNote = notes[0]
+    var currentNote: PlayedNote = notes[0]
     notes.forEach((note) => {
       currentNote = note
-      if (currentNote.getMidi() !== previousNote.getMidi() && mustCorrectTime)
-        currentNote.addTime(previousNote.getDuration() + previousNote.getTime())
+      if (currentNote !== previousNote && mustCorrectTime)
+        currentNote.addTimeBeforeStart(
+          previousNote.getDuration() + previousNote.getDuration()
+        )
 
       tabNotes.push(new TabNote(currentNote, tonic, maxCaseNumber))
 
-      previousNote = new MidiNote(
-        currentNote.getMidi(),
+      previousNote = new PlayedNote(
+        currentNote.getNote(),
         currentNote.getDuration(),
-        currentNote.getTime()
+        currentNote.getTimeBeforeStart()
       )
     })
     return tabNotes
   }
-  addNote(note: MidiNote): void {
-    this.melody.push(new TabNote(note, this.tonic, this.maxCaseNumber))
+  addNote(note: PlayedNote): void {
+    if (this.mustCorrectTime) {
+      note.addTimeBeforeStart(
+        this.melody[this.melody.length - 1].getNote().getDuration() +
+          this.melody[this.melody.length - 1].getNote().getTimeBeforeStart()
+      )
+
+      this.melody.push(new TabNote(note, this.tonic, this.maxCaseNumber))
+    }
   }
   getMelody(): TabNote[] {
     return this.melody

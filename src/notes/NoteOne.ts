@@ -3,8 +3,8 @@
 // Todo: réfléchir au constructeur et comment on peut faire en sorte que le nom et la valeur midi soient concordantes.
 // Todo: Si on veut partir du nom d'une note il faut le convertir en valeur midi et inversement.
 
-import NoteNameEng from './enums/NoteNameEng'
-import noteEngEnums from './enums/NoteNumberEng'
+import NoteNameEng from '../enums/NoteNameEng'
+import noteEngEnums from '../enums/NoteNumberEng'
 
 export default class NoteOne {
   readonly name: string

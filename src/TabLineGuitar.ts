@@ -1,10 +1,8 @@
-import MidiNote from "./MidiNote";
-import TabLine from "./TabLine";
-import TabNote from "./TabNote";
+import NoteOne from './notes/NoteOne'
+import TabLine from './TabLine'
 
 export class TabLineGuitar extends TabLine {
-  constructor(tonic: MidiNote, melody: MidiNote[]) {
-    super(tonic, melody, 21)
+  constructor(tonic: NoteOne) {
+    super(tonic, [], 21)
   }
-
 }

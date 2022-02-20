@@ -39,7 +39,7 @@
 // // write the output buffer.aloc
 // fs.writeFileSync('outputs/debugTS/output-1.mid', midi.toArray())
 
+import { Note } from '@tonejs/midi/dist/Note'
 import testEnum from './enums/TestEnum'
 
-console.log('using the parameter un.valueof', testEnum.un.valueOf())
 
