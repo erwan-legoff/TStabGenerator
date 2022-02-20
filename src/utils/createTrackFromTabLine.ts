@@ -1,5 +1,5 @@
 import TabNote from '../TabNote'
-import Note from '../Note'
+import MidiNote from '../MidiNote'
 import TabLine from '../TabLine'
 import { Track } from '@tonejs/midi'
 

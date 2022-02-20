@@ -1,5 +1,5 @@
 import { Midi } from '@tonejs/midi'
-import Note from '../../src/Note'
+import MidiNote from '../../src/MidiNote'
 import TabLine from '../../src/TabLine'
 import createTrackFromTabLine from '../../src/utils/createTrackFromTabLine'
 var midi = new Midi()
@@ -7,10 +7,10 @@ var midi = new Midi()
 var track1 = midi.addTrack()
 
 const tabLine = new TabLine(
-  new Note(Note.noteNameToMidi('E2'), 0.5),
+  new MidiNote(MidiNote.noteNameToMidi('E2'), 0.5),
   [
-    new Note(Note.noteNameToMidi('E2'), 0.5, 0.5),
-    new Note(Note.noteNameToMidi('F2'), 0.5, 0.5),
+    new MidiNote(MidiNote.noteNameToMidi('E2'), 0.5, 0.5),
+    new MidiNote(MidiNote.noteNameToMidi('F2'), 0.5, 0.5),
   ],
   12,
   true
