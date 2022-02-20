@@ -1,5 +1,5 @@
 // Enums to parse the note letter in string to its midi value.
-enum noteEngEnums {
+enum noteNumberEng {
   C,
   CS,
   D,
@@ -13,4 +13,4 @@ enum noteEngEnums {
   AS,
   B,
 }
-export default noteEngEnums
+export default noteNumberEng
