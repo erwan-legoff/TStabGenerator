@@ -37,4 +37,8 @@ export class TrackOne {
     return track
   }
 
+  getPlayedNotes(): PlayedNote[] {
+    return this.playedNotes
+  }
+
 }

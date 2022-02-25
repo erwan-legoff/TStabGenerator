@@ -1,6 +1,6 @@
 import NoteOne from '../src/notes/NoteOne'
 import PlayedNote from '../src/notes/PlayedNoteOne'
-import TabNote from '../src/TabNote'
+import TabNote from '../src/tabs/TabNote'
 
 describe('tabNote', () => {
 

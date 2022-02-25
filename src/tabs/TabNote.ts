@@ -1,5 +1,5 @@
-import NoteOne from './notes/NoteOne'
-import PlayedNote from './notes/PlayedNoteOne'
+import NoteOne from '../notes/NoteOne'
+import PlayedNote from '../notes/PlayedNoteOne'
 
 export default class TabNote {
   /**

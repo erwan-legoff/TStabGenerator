@@ -1,5 +1,5 @@
-import NoteOne from './notes/NoteOne';
-import TabLine from './TabLine'
+import NoteOne from '../notes/NoteOne';
+import TabLine from '../tabLines/TabLine'
 import TabNote from './TabNote';
 
 export interface Tab {

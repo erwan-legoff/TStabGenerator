@@ -1,16 +1,16 @@
-import NoteOne from './notes/NoteOne'
-import PlayedNote from './notes/PlayedNoteOne'
-import TabNote from './TabNote'
+import NoteOne from '../notes/NoteOne'
+import PlayedNote from '../notes/PlayedNoteOne'
+import TabNote from '../tabs/TabNote'
 /**
  ** A class to represent a group of music tabs that are played in a particular order
  ** It could be a melody oplayed on the string of a instrument, like a guitar string.
  ** it has a tonic note and a list of tabNotes.
  */
 export default class TabLine {
-  tonic: NoteOne
-  melody: TabNote[]
-  maxCaseNumber: number
-  mustCorrectTime: boolean
+  private tonic: NoteOne
+  private melody: TabNote[]
+  private maxCaseNumber: number
+  private mustCorrectTime: boolean
   constructor(
     tonic: NoteOne,
     melody: PlayedNote[],
@@ -69,5 +69,8 @@ export default class TabLine {
   }
   toString(): string {
     return this.melody.map((note) => note.toString()).join('--')
+  }
+  getTonic(): NoteOne {
+    return this.tonic
   }
 }

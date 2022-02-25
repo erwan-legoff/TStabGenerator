@@ -18,6 +18,6 @@ describe('A0 Note', () => {
 describe('40 Midi Number', () => {
   const note = new PlayedNote(new NoteOne(40));
   it('should be an E2 note', () => {
-    expect(note.getNote().name).toBe('E2')
+    expect(note.getNote().getName()).toBe('E2')
   })
 } )

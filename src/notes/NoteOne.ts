@@ -7,8 +7,8 @@ import NoteNameEng from '../enums/NoteNameEng'
 import noteEngEnums from '../enums/NoteNumberEng'
 
 export default class NoteOne {
-  readonly name: string
-  readonly midi: number
+  private name: string
+  private midi: number
 
   constructor(midiNumber: number) {
     if (midiNumber < 0)
@@ -107,5 +107,11 @@ export default class NoteOne {
       throw new Error('The note name is too short : ' + noteName)
 
     return noteName
+  }
+  getName(): string {
+    return this.name
+  }
+  getMidi(): number {
+    return this.midi
   }
 }

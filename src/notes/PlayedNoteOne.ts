@@ -43,7 +43,7 @@ export default class PlayedNote {
   }
 
   getMidi(): number {
-    return this.note.midi
+    return this.note.getMidi()
   }
   getNote(): NoteOne {
     return this.note
