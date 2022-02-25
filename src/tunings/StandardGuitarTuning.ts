@@ -1,15 +1,16 @@
-import MidiNote from '../MidiNote'
+
+import NoteOne from '../notes/NoteOne'
 import { GuitarTuning } from './GuitarTuning'
 
-class StandardGuitarTuning implements GuitarTuning {
-  getNotes(): MidiNote[] {
+export class StandardGuitarTuning implements GuitarTuning {
+  getNotes(): NoteOne[] {
     return [
-      MidiNote.fromString('E2'),
-      MidiNote.fromString('A2'),
-      MidiNote.fromString('D3'),
-      MidiNote.fromString('G3'),
-      MidiNote.fromString('B3'),
-      MidiNote.fromString('E4'),
+      NoteOne.noteNameToNote('E2'),
+      NoteOne.noteNameToNote('A2'),
+      NoteOne.noteNameToNote('D3'),
+      NoteOne.noteNameToNote('G3'),
+      NoteOne.noteNameToNote('B3'),
+      NoteOne.noteNameToNote('E4')
     ]
   }
 

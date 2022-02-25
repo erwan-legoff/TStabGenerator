@@ -6,11 +6,15 @@ import { TabLineGuitar } from '../tabLines/TabLineGuitar'
 import TabNote from './TabNote'
 import { ChooseTabLineStrategy } from '../tabLines/chooseTabLineStrategy/ChooseTabLineStrategy'
 import { ChooseTabLineStrategySimple } from '../tabLines/chooseTabLineStrategy/ChooseTabLineStrategySimple'
+import { Guitar } from '../instruments/Guitar'
+import { StandardGuitarTuning } from '../tunings/StandardGuitarTuning'
 
 class TabGuitar implements Tab {
-  readonly numberOfStrings: number = 6
-  private music: TabLineGuitar[] = []
-  constructor(readonly name: string, musicNotes: TrackOne) {
+  // readonly numberOfStrings: number = 6
+  private music: TabLineGuitar[]
+  private strategy: ChooseTabLineStrategy
+  constructor(readonly name: string, musicNotes: TrackOne, guitar: Guitar = new Guitar(new StandardGuitarTuning, 0), strategy: ChooseTabLineStrategy = new ChooseTabLineStrategySimple()) {
+    this.music = guitar
     this.generateMusicFromNotes(musicNotes)
   }
 
@@ -44,4 +48,13 @@ class TabGuitar implements Tab {
       tabLine.addNote(playedNote)
     })
   }
+
+  printTab(): string {
+    let tab = ''
+    this.music.forEach((tabLine) => {
+      tab += tabLine.toString()
+    })
+    return tab
+  }
+
 }

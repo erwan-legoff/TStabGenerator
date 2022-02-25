@@ -1,6 +1,6 @@
-import MidiNote from "../MidiNote";
+import NoteOne from "../notes/NoteOne";
 
 export interface Tuning {
-  getNotes(): MidiNote[]
+  getNotes(): NoteOne[]
   getName(): string
 }

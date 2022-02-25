@@ -1,7 +1,7 @@
 import { Instrument } from './Instrument'
 import { Tuning } from '../tunings/Tuning'
 import { GuitarTuning } from '../tunings/GuitarTuning'
-class Guitar implements Instrument {
+export class Guitar implements Instrument {
   readonly name: string
   readonly tuning: Tuning
   capo: number
