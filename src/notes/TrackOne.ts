@@ -1,4 +1,5 @@
 import PlayedNote from "./PlayedNoteOne";
+import { Track, Midi } from "@tonejs/midi";
 
 export class TrackOne {
   playedNotes: PlayedNote[] = []
@@ -15,4 +16,25 @@ export class TrackOne {
   addPlayedNote(playedNote: PlayedNote) {
     this.playedNotes.push(playedNote)
   }
+
+  getMidiTrack(): Track {
+    let timeSpent : number = 0
+    const midiFile = new Midi()
+    const track = midiFile.addTrack()
+
+    this.playedNotes.forEach(playedNote => {
+      const midi = playedNote.getMidi()
+      const time = timeSpent + playedNote.getTimeBeforeStart() * this.beatLength
+      const duration = playedNote.getDuration() * this.beatLength
+
+      track.addNote({
+        midi,
+        time,
+        duration,
+      })
+      timeSpent += duration + playedNote.getTimeBeforeStart()
+    })
+    return track
+  }
+
 }

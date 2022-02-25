@@ -6,15 +6,15 @@ export default class PlayedNote {
   private duration: number
   constructor(
     note: NoteOne,
-    timeBeforeStartRelativeToBeat: number,
-    durationRelativeToBeat: number
+    timeBeforeStartRelativeToBeat: number = 0,
+    durationRelativeToBeat: number = 1
   ) {
     this.note = note
     this.timeBeforeStart = timeBeforeStartRelativeToBeat // in percentage of the beat
     this.duration = durationRelativeToBeat // in percentage of the beat
   }
   /**
-   * * A function to get the a played note from a note letter in string.
+   * * A function to get the played note from a note letter in string.
    * @param noteName eg. 'C4'
    * @param timeBeforeStart percentage of the beat (1 = 100%)
    * @param duration percentage of the beat (1 = 100%)
