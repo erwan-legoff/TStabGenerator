@@ -14,7 +14,7 @@ class TabGuitar implements Tab {
   private music: TabLineGuitar[]
   private strategy: ChooseTabLineStrategy
   constructor(readonly name: string, musicNotes: TrackOne, guitar: Guitar = new Guitar(new StandardGuitarTuning, 0), strategy: ChooseTabLineStrategy = new ChooseTabLineStrategySimple()) {
-    this.music = guitar
+    this.music = guitar.getFretBoard().get/// renvoyer les cordes
     this.generateMusicFromNotes(musicNotes)
   }
 

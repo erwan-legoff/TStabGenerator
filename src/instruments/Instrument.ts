@@ -1,4 +1,5 @@
 import { Tuning } from '../tunings/Tuning'
+import { FretBoardGuitar } from './fretBoards/FretBoardGuitar';
 
 export interface Instrument {
   name: string
@@ -10,4 +11,5 @@ export interface Instrument {
   getName(): string
   getNumberOfStrings(): number
   getCapo(): number
+  getFretBoard(): FretBoardGuitar
 }

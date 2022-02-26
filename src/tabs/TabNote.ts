@@ -1,5 +1,6 @@
 import NoteOne from '../notes/NoteOne'
 import PlayedNote from '../notes/PlayedNoteOne'
+import { ChooseFretNumberStrategy } from './ChooseFretNumberStrategy/ChooseFretNumberStrategy'
 
 export default class TabNote {
   /**
@@ -9,29 +10,22 @@ export default class TabNote {
    */
   private note: PlayedNote
   private caseNumber: number
-  constructor(note: PlayedNote, tonic: NoteOne, maxCaseNumber: number) {
+  constructor(note: PlayedNote, tonic: NoteOne, maxCaseNumber: number, chooseFretNumberStrategy: ChooseFretNumberStrategy) {
     if (maxCaseNumber < 12) throw new Error('you must have at least one octave')
 
     this.note = note
-    this.caseNumber = this.computeCaseNumber(note, tonic, maxCaseNumber)
+    this.caseNumber = this.computeCaseNumber(note, tonic, maxCaseNumber, chooseFretNumberStrategy)
   }
 
   // A function to get the case number of a note thanks to the tonic note.
   private computeCaseNumber(
     note: PlayedNote,
     tonic: NoteOne,
-    maxCaseNumber: number
+    maxCaseNumber: number,
+    chooseFretNumberStrategy: ChooseFretNumberStrategy
   ): number {
-    const midi = note.getMidi()
-    const tonicMidi = tonic.midi
-    var caseNumber = midi - tonicMidi
-    while (caseNumber < 0) {
-      caseNumber += 12
-    }
-    while (caseNumber > maxCaseNumber) {
-      caseNumber -= 12
-    }
-    return caseNumber
+    
+    return chooseFretNumberStrategy.chooseFretNumber(note.getNote(), tonic, maxCaseNumber)
   }
   getNote(): PlayedNote {
     return this.note

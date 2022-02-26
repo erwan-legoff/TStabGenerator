@@ -1,5 +1,6 @@
 import NoteOne from '../notes/NoteOne'
 import PlayedNote from '../notes/PlayedNoteOne'
+import { ChooseFretNumberStrategySimple } from '../tabs/ChooseFretNumberStrategy/ChooseFretNumberStrategySimple'
 import TabNote from '../tabs/TabNote'
 /**
  ** A class to represent a group of music tabs that are played in a particular order
@@ -34,6 +35,7 @@ export default class TabLine {
     maxCaseNumber: number,
     mustCorrectTime: boolean = false
   ): TabNote[] {
+    const tabLine = new TabLine(tonic, [], maxCaseNumber, mustCorrectTime)
     const tabNotes: TabNote[] = [] //  On doit ajouter le temps de chaque note précédente
     var previousNote: PlayedNote = notes[0]
     var currentNote: PlayedNote = notes[0]
@@ -44,7 +46,7 @@ export default class TabLine {
           previousNote.getDuration() + previousNote.getDuration()
         )
 
-      tabNotes.push(new TabNote(currentNote, tonic, maxCaseNumber))
+      tabLine.addNote(currentNote)
 
       previousNote = new PlayedNote(
         currentNote.getNote(),
@@ -54,14 +56,21 @@ export default class TabLine {
     })
     return tabNotes
   }
-  addNote(note: PlayedNote): void {
+  public addNote(note: PlayedNote): void {
     if (this.mustCorrectTime) {
       note.addTimeBeforeStart(
         this.melody[this.melody.length - 1].getNote().getDuration() +
           this.melody[this.melody.length - 1].getNote().getTimeBeforeStart()
       )
 
-      this.melody.push(new TabNote(note, this.tonic, this.maxCaseNumber))
+      this.melody.push(
+        new TabNote(
+          note,
+          this.tonic,
+          this.maxCaseNumber,
+          new ChooseFretNumberStrategySimple()
+        )
+      )
     }
   }
   getMelody(): TabNote[] {
@@ -72,5 +81,8 @@ export default class TabLine {
   }
   getTonic(): NoteOne {
     return this.tonic
+  }
+  getMaxMidiPossible(): number {
+    return this.tonic.getMidi() + this.maxCaseNumber
   }
 }

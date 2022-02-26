@@ -1,0 +1,37 @@
+import NoteOne from '../../notes/NoteOne'
+import { ChooseFretNumberStrategy } from './ChooseFretNumberStrategy'
+
+export class ChooseFretNumberStrategySimple implements ChooseFretNumberStrategy {
+  /**
+   * Ici le but est de choisir la fret avec le chiffre le plus petit qui correspond parfaitement à la note.
+   * @param note
+   * @param string
+   * @returns
+   */
+  chooseFretNumber(
+    note: NoteOne,
+    tonicNote: NoteOne,
+    maxCaseNumber: number
+  ): number {
+    const midiNote = note.getMidi()
+    const midiTonic = tonicNote.getMidi()
+    const maxMidiPossible = midiTonic + maxCaseNumber
+    const maxFretNumber = maxMidiPossible - midiTonic
+    const midiNoteSimple = midiNote % 12
+    const midiStringSimple = midiTonic % 12
+    if (midiNote > maxMidiPossible || midiNote < midiTonic) {
+      if (midiNoteSimple > midiStringSimple + maxFretNumber) {
+        throw new Error(
+          `The note ${note} is not reproducible on the string (not enough frets) ${tonicNote.getName()}`
+        )
+      }
+      if (midiNoteSimple < midiStringSimple) {
+        throw new Error(
+          `The note ${note} is not reproducible on the string (too low) ${tonicNote.getName()}`
+        )
+      }
+      return midiNoteSimple - midiStringSimple
+    }
+    return midiNote - midiTonic
+  }
+}

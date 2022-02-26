@@ -1,15 +1,23 @@
 import { Instrument } from './Instrument'
 import { Tuning } from '../tunings/Tuning'
 import { GuitarTuning } from '../tunings/GuitarTuning'
+
+import { FretBoardGuitar } from './fretBoards/FretBoardGuitar'
 export class Guitar implements Instrument {
+  private fretBoard: FretBoardGuitar
   readonly name: string
   readonly tuning: Tuning
   capo: number
 
-  constructor(tuning: GuitarTuning, capo: number) {
+  constructor(
+    tuning: GuitarTuning,
+    capo: number,
+    fretBoard: FretBoardGuitar = new FretBoardGuitar()
+  ) {
     this.name = 'Guitar'
     this.tuning = tuning
     this.capo = capo
+    this.fretBoard = fretBoard
   }
 
   setCapo(capo: number): void {
@@ -30,5 +38,9 @@ export class Guitar implements Instrument {
 
   getCapo(): number {
     return this.capo
+  }
+
+  getFretBoard(): FretBoardGuitar {
+    return this.fretBoard
   }
 }
