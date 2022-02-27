@@ -25,4 +25,13 @@ export class FretBoard {
   public addPlayedNote(playedNote: PlayedNote, stringIndex: number): void {
     this.tabLines[stringIndex].addNote(playedNote)
   }
+
+  getNumberOfStrings(): number {
+    return this.tuning.getNotes().length
+  }
+
+  getMusicTabLines(): TabLine[] {
+    return this.tabLines
+  }
+
 }

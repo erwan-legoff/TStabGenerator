@@ -1,12 +1,10 @@
-import NoteOne from '../notes/NoteOne'
+import PlayedNote from '../notes/PlayedNoteOne'
 import TabLine from '../tabLines/TabLine'
-import TabNote from './TabNote'
 
 export interface Tab {
   getName(): string
   getMusic(): TabLine[]
 
-  addNote(note: NoteOne, stringNumber: number): void
-  addTabNote(tabNote: TabNote): void
+  addPlayedNote(playedNote: PlayedNote): void
   printTab(): string
 }

@@ -21,7 +21,7 @@ export default class TabLine {
     this.tonic = tonic
     this.maxCaseNumber = maxCaseNumber
     this.mustCorrectTime = mustCorrectTime
-    this.melody = TabLine.fromNotesToTabNotes(
+    this.melody = this.fromNotesToTabNotes(
       melody,
       tonic,
       maxCaseNumber,
@@ -29,13 +29,14 @@ export default class TabLine {
     )
   }
   // A function to convert a list of notes to a list of tabNotes.
-  private static fromNotesToTabNotes(
+  private  fromNotesToTabNotes(
     notes: PlayedNote[],
     tonic: NoteOne,
     maxCaseNumber: number,
     mustCorrectTime: boolean = false
   ): TabNote[] {
-    const tabLine = new TabLine(tonic, [], maxCaseNumber, mustCorrectTime)
+
+//! Warning: this causes a stack overflow, because it calls itself recursively.
     const tabNotes: TabNote[] = [] //  On doit ajouter le temps de chaque note précédente
     var previousNote: PlayedNote = notes[0]
     var currentNote: PlayedNote = notes[0]
@@ -46,7 +47,7 @@ export default class TabLine {
           previousNote.getDuration() + previousNote.getDuration()
         )
 
-      tabLine.addNote(currentNote)
+      this.addNote(currentNote)
 
       previousNote = new PlayedNote(
         currentNote.getNote(),
