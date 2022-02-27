@@ -6,7 +6,7 @@
 import NoteNameEng from '../enums/NoteNameEng'
 import noteEngEnums from '../enums/NoteNumberEng'
 
-export default class NoteOne {
+export default class NoteOne implements NoteOneInterface {
   private name: string
   private midi: number
 

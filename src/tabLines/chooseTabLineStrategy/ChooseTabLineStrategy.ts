@@ -8,5 +8,5 @@ export interface ChooseTabLineStrategy {
    * @param note the note you want to choose the tabLine for
    * @param tabLines the list of tabLines you want to choose from
    */
-  chooseTabLine(note: NoteOne, tabLines: TabLine[]): number
+  chooseTabLine(note: NoteOneInterface, tabLines: TabLine[]): number
 }

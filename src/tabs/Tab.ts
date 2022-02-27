@@ -5,6 +5,6 @@ export interface Tab {
   getName(): string
   getMusic(): TabLine[]
 
-  addPlayedNote(playedNote: PlayedNote): void
+  addPlayedNote(playedNote: PlayedNote, fillWithSilence: boolean): void
   printTab(): string
 }

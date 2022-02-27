@@ -2,7 +2,7 @@ import NoteOne from '../../notes/NoteOne'
 
 export interface ChooseFretNumberStrategy {
   chooseFretNumber(
-    note: NoteOne,
+    note: NoteOneInterface,
     tonicNote: NoteOne,
     maxCaseNumber: number
   ): number

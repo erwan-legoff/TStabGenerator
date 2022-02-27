@@ -9,8 +9,9 @@ import { Guitar } from '../instruments/Guitar'
 import { StandardGuitarTuning } from '../tunings/StandardGuitarTuning'
 import { FretBoardGuitar } from '../instruments/fretBoards/FretBoardGuitar'
 import PlayedNote from '../notes/PlayedNoteOne'
+import { PlayedNoteOneInterface } from '../notes/PlayedNoteOneInterface'
 
-class TabGuitar implements Tab {
+export class TabGuitar implements Tab {
   // readonly numberOfStrings: number = 6
   private fretBoard: FretBoardGuitar
   private strategy: ChooseTabLineStrategy
@@ -25,13 +26,20 @@ class TabGuitar implements Tab {
     this.generateMusicFromNotes(musicNotes)
   }
 
-  addPlayedNote(playedNote: PlayedNote): void {
+  addPlayedNote(playedNote: PlayedNoteOneInterface, fillWithSilence: boolean = true): void {
     const stringNumber = this.chooseStringNumber(
       playedNote.getNote(),
       new ChooseTabLineStrategySimple()
     )
+
     this.fretBoard.addPlayedNote(playedNote, stringNumber)
   }
+
+  private fillWithSilence(): void {
+
+  }
+    
+
 
   getName(): string {
     return this.name
@@ -41,7 +49,7 @@ class TabGuitar implements Tab {
   }
 
   private chooseStringNumber(
-    note: NoteOne,
+    note: NoteOneInterface,
     strategy: ChooseTabLineStrategy
   ): number {
     //choose the right string number according to the note to play

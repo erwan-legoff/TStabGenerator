@@ -1,4 +1,5 @@
 import NoteOne from '../../notes/NoteOne'
+import { NoteOneSilence } from '../../notes/NoteOneSilence'
 
 import TabLine from '../TabLine'
 import { ChooseTabLineStrategy } from './ChooseTabLineStrategy'
@@ -9,8 +10,10 @@ export class ChooseTabLineStrategySimple implements ChooseTabLineStrategy {
    * @param tabNote the tabNote you want to choose the tabLine for
    * @param tabLines the list of tabLines you want to choose from
    */
-  chooseTabLine(note: NoteOne, tabLines: TabLine[]): number {
+  chooseTabLine(note: NoteOneInterface, tabLines: TabLine[]): number {
     //choose the right string number according to the note to play : the string tonic note should be lower than the note and also the closest note
+    if(note instanceof NoteOneSilence) return -1
+    
     const midi = note.getMidi()
     let difference = tabLines[0].getTonic().getMidi() - midi
     let choosenIndex: number = 0

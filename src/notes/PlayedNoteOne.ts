@@ -1,6 +1,7 @@
 import NoteOne from './NoteOne'
+import { PlayedNoteOneInterface } from './PlayedNoteOneInterface'
 
-export default class PlayedNote {
+export default class PlayedNote implements PlayedNoteOneInterface{
   private note: NoteOne
   private timeBeforeStart: number
   private duration: number
@@ -12,6 +13,9 @@ export default class PlayedNote {
     this.note = note
     this.timeBeforeStart = timeBeforeStartRelativeToBeat // in percentage of the beat
     this.duration = durationRelativeToBeat // in percentage of the beat
+  }
+  getNoteName(): string {
+    return this.note.getName()
   }
   /**
    * * A function to get the played note from a note letter in string.

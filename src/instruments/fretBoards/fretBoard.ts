@@ -1,4 +1,6 @@
 import PlayedNote from '../../notes/PlayedNoteOne'
+import { PlayedNoteOneInterface } from '../../notes/PlayedNoteOneInterface'
+import { PlayedNoteOneSilence } from '../../notes/PlayedNoteOneSilence'
 import TabLine from '../../tabLines/TabLine'
 import TabNote from '../../tabs/TabNote'
 import { Tuning } from '../../tunings/Tuning'
@@ -22,9 +24,27 @@ export class FretBoard {
     }
   }
 
-  public addPlayedNote(playedNote: PlayedNote, stringIndex: number): void {
-    this.tabLines[stringIndex].addNote(playedNote)
+  public addPlayedNote(
+    playedNote: PlayedNoteOneInterface,
+    stringIndex: number
+  ): void {
+    this.tabLines[stringIndex].addPlayedNote(playedNote)
   }
+  public addAllSilence(duration: number): void {
+    this.tabLines.forEach((tabLine) =>
+      tabLine.addPlayedNote(new PlayedNoteOneSilence(duration))
+    )
+  }
+//! L'inérêt c'est de faire en sorte de trouver la plus longue corde pour qu'on remplisse les autres cordes de silence jusqu'à arriver à la plus longue corde.l
+  public getLongestTabLine(): number {
+    return this.tabLines.reduce(
+      (longestTabLine, tabLine) =>
+        longestTabLine.getMelody().length > tabLine.getMelody().length
+          ? longestTabLine
+          : tabLine,
+      new TabLine(new NoteOne(0), [], 0)
+    ).getLength()
+
 
   getNumberOfStrings(): number {
     return this.tuning.getNotes().length
@@ -33,5 +53,4 @@ export class FretBoard {
   getMusicTabLines(): TabLine[] {
     return this.tabLines
   }
-
 }

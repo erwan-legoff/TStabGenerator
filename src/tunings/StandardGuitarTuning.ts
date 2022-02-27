@@ -17,4 +17,7 @@ export class StandardGuitarTuning implements GuitarTuning {
   getName(): string {
     return 'Standard Guitar Tuning'
   }
+  getStringNote(stringIndex: number): NoteOne {
+    return this.getNotes()[stringIndex]
+  }
 }
