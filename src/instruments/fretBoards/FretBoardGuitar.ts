@@ -1,5 +1,5 @@
 import { StandardGuitarTuning } from '../../tunings/StandardGuitarTuning'
-import { FretBoard } from './fretBoard'
+import { FretBoard } from './FretBoard'
 
 export class FretBoardGuitar extends FretBoard {
   constructor() {

@@ -26,25 +26,48 @@ export class FretBoard {
 
   public addPlayedNote(
     playedNote: PlayedNoteOneInterface,
-    stringIndex: number
+    stringIndex: number,
+    silenceOtherStrings: boolean = false
   ): void {
     this.tabLines[stringIndex].addPlayedNote(playedNote)
+
+    if (silenceOtherStrings) {
+      const silenceDuration =
+        playedNote.getDuration() + playedNote.getTimeBeforeStart()
+      this.addAllSilenceButOneStringIndex(silenceDuration, stringIndex)
+    }
   }
   public addAllSilence(duration: number): void {
     this.tabLines.forEach((tabLine) =>
       tabLine.addPlayedNote(new PlayedNoteOneSilence(duration))
     )
   }
-//! L'inérêt c'est de faire en sorte de trouver la plus longue corde pour qu'on remplisse les autres cordes de silence jusqu'à arriver à la plus longue corde.l
-  public getLongestTabLine(): number {
-    return this.tabLines.reduce(
-      (longestTabLine, tabLine) =>
-        longestTabLine.getMelody().length > tabLine.getMelody().length
-          ? longestTabLine
-          : tabLine,
-      new TabLine(new NoteOne(0), [], 0)
-    ).getLength()
 
+  public addAllSilenceButOneStringIndex(
+    duration: number,
+    stringIndex: number = -1
+  ): void {
+    this.tabLines.forEach((tabLine, index) => {
+      if (index !== stringIndex) {
+        tabLine.addPlayedNote(new PlayedNoteOneSilence(duration))
+      }
+    })
+  }
+
+  public getLongestTabLine(): number {
+    //Copie de la tabline actuelle
+    const tabLinesCopy = this.tabLines.map((tabLine) => tabLine)
+    //On trie les tabLines par ordre décroissant de longueur
+    tabLinesCopy.sort((a, b) => b.getMelody().length - a.getMelody().length)
+    //On récupère la plus longue tabLine
+    const longestTabLine = tabLinesCopy[0]
+    //On récupère l'index de la tabline la plus longue dans this.tabLines
+    const index = this.tabLines.indexOf(longestTabLine)
+    if (index === -1)
+      throw new Error('Cannot find longest tabLine, this should never happen')
+
+    return index
+  }
 
   getNumberOfStrings(): number {
     return this.tuning.getNotes().length

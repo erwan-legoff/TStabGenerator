@@ -80,9 +80,10 @@ export default class TabLine {
             .getTimeBeforeStart()
       )
     }
-    if (note instanceof PlayedNoteOneSilence)
+    if (note instanceof PlayedNoteOneSilence) {
       this.melody.push(new TabNoteSilence(note))
-    if (note instanceof PlayedNote) {
+    }
+    else if (note instanceof PlayedNote) {
       this.melody.push(
         new TabNote(
           note,
@@ -92,7 +93,10 @@ export default class TabLine {
         )
       )
     } else {
-      throw new Error('The note is not a PlayedNoteOneSilence or a PlayedNote')
+      throw new Error(
+        'The note is not a PlayedNoteOneSilence or a PlayedNote, the type is ' +
+          note.constructor.name
+      )
     }
   }
 

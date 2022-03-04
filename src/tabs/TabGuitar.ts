@@ -26,20 +26,17 @@ export class TabGuitar implements Tab {
     this.generateMusicFromNotes(musicNotes)
   }
 
-  addPlayedNote(playedNote: PlayedNoteOneInterface, fillWithSilence: boolean = true): void {
+  addPlayedNote(
+    playedNote: PlayedNoteOneInterface,
+    fillWithSilence: boolean = true
+  ): void {
     const stringNumber = this.chooseStringNumber(
       playedNote.getNote(),
       new ChooseTabLineStrategySimple()
     )
 
-    this.fretBoard.addPlayedNote(playedNote, stringNumber)
+    this.fretBoard.addPlayedNote(playedNote, stringNumber, fillWithSilence)
   }
-
-  private fillWithSilence(): void {
-
-  }
-    
-
 
   getName(): string {
     return this.name
@@ -58,7 +55,7 @@ export class TabGuitar implements Tab {
 
   private generateMusicFromNotes(musicNotes: TrackOne) {
     musicNotes.getPlayedNotes().forEach((playedNote) => {
-      this.addPlayedNote(playedNote)
+      this.addPlayedNote(playedNote, true)
     })
   }
 
