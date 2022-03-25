@@ -63,7 +63,6 @@ describe('pentatonic scale', () => {
 describe('Get Next Note', () => {
   const Eroot = NoteOne.noteNameToNote('E4')
   const chromaticScale = new ChromaticScale()
-  const chromaticResult = chromaticScale.getNotes(Eroot)
 
   it('should have the F4 after the E4 (root)', () => {
     expect(chromaticScale.getNextNote(Eroot, Eroot).getName()).toBe('F4')

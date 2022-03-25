@@ -1,9 +1,3 @@
-// Todo: Réfléchir à comment gérer les notes qui n'ont pas de temps (note tout court lol), ces notes étant une tonique ou autre, mais pas une note réellement jouée. Par contre la midiNote doit avoir une Note, un temps avant de sonner, ainsi qu'une durée.
-
-// Todo: réfléchir au constructeur et comment on peut faire en sorte que le nom et la valeur midi soient concordantes.
-// Todo: Si on veut partir du nom d'une note il faut le convertir en valeur midi et inversement.
-
-import { resolveTripleslashReference } from 'typescript'
 import NoteNameEng from '../enums/NoteNameEng'
 import noteEngEnums from '../enums/NoteNumberEng'
 
@@ -109,7 +103,6 @@ export default class NoteOne implements NoteOneInterface {
 
     return noteName
   }
-
   getName(): string {
     return this.name
   }
