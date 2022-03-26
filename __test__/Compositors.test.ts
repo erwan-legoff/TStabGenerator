@@ -39,5 +39,18 @@ describe('Simple Down Arpege Compositor', () => {
     }
   })
 
+  it('should return notes that can go higher than an octave', () => {
+    const nbOfNotes = 24
+    const music = compositor.getMusic(nbOfNotes)
+    const D4 = NoteOne.noteNameToNote('D4')
+    const C5 = NoteOne.noteNameToNote('C5')
+    const playedNotes = music.getPlayedNotes()
+    const find = playedNotes.find(playedNote => {
+      const note = playedNote.getNote()
+      return note.getMidi() === C5.getMidi()
+    })
+    expect(find).toBeDefined()
+  })
+
   
 })

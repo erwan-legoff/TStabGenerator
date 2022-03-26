@@ -3,9 +3,9 @@ import { ChromaticScale } from '../src/scales/ChromaticScale'
 import { PentatonicScale } from '../src/scales/PentatonicScale'
 
 describe('chromatic scale', () => {
-  const Eroot = NoteOne.noteNameToNote('E4')
+  const E4 = NoteOne.noteNameToNote('E4')
   const chromaticScale = new ChromaticScale()
-  const chromaticResult = chromaticScale.getNotes(Eroot)
+  const chromaticResult = chromaticScale.getNotes(E4)
   const expectedChromaticResult = [
     NoteOne.noteNameToNote('E4'),
     NoteOne.noteNameToNote('F4'),
@@ -24,7 +24,7 @@ describe('chromatic scale', () => {
     expect(chromaticResult).toHaveLength(12)
   })
   it('should have the good root', () => {
-    expect(chromaticResult[0].getName()).toBe(Eroot.getName())
+    expect(chromaticResult[0].getName()).toBe(E4.getName())
     expect(chromaticResult[0].getName()).toBe('E4')
   })
   it('should have the good seconde note', () => {
@@ -34,6 +34,14 @@ describe('chromatic scale', () => {
   it('should have all the same note', () => {
     expect(chromaticResult).toEqual(expectedChromaticResult)
   })
+
+  it('should have an D5 note - another octave', () => {
+    const C4 = NoteOne.noteNameToNote('C4')
+    const C6 = NoteOne.noteNameToNote('C6')
+    const chromaticResult = chromaticScale.getNotes(C4, 25)
+    expect(chromaticResult[24].getName()).toBe(C6.getName())
+  })
+
 })
 
 
@@ -60,16 +68,16 @@ describe('pentatonic scale', () => {
 })
 
 
-describe('Get Next Note', () => {
-  const Eroot = NoteOne.noteNameToNote('E4')
-  const chromaticScale = new ChromaticScale()
+// describe('Get Next Note', () => {
+//   const Eroot = NoteOne.noteNameToNote('E4')
+//   const chromaticScale = new ChromaticScale()
 
-  it('should have the F4 after the E4 (root)', () => {
-    expect(chromaticScale.getNextNote(Eroot, Eroot).getName()).toBe('F4')
-  })
-  it('should have the F#4 after the F4', () => {
-    expect(
-      chromaticScale.getNextNote(NoteOne.noteNameToNote('F4'), Eroot).getName()
-    ).toBe('F#4')
-  })
-})
+//   it('should have the F4 after the E4 (root)', () => {
+//     expect(chromaticScale.getNextNote(Eroot, Eroot).getName()).toBe('F4')
+//   })
+//   it('should have the F#4 after the F4', () => {
+//     expect(
+//       chromaticScale.getNextNote(NoteOne.noteNameToNote('F4'), Eroot).getName()
+//     ).toBe('F#4')
+//   })
+// })

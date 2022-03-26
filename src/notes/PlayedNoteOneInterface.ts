@@ -1,3 +1,5 @@
+import { NoteOneInterface } from "./NoteOneInterface"
+
 export interface PlayedNoteOneInterface {
   getNote(): NoteOneInterface
   getTimeBeforeStart(): number

@@ -12,7 +12,7 @@ export class PlayedNoteOneSilence implements PlayedNoteOneInterface {
     this.silenceNote = new NoteOneSilence()
   }
 
-  getNote(): NoteOneInterface {
+  getNote(): NoteOneSilence {
     return new NoteOneSilence()
   }
   getTimeBeforeStart(): number {

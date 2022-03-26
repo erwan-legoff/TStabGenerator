@@ -1,18 +1,17 @@
 import NoteOne from '../notes/NoteOne'
-import { getPositiveInterval } from '../utils/getPositiveInterval'
+import { getPositiveInterval as getPositiveMinimumInterval } from '../utils/getPositiveInterval'
 
 export class GenericalScale {
   protected intervals: Array<number>
   protected name: string
 
   constructor(intervals: Array<number>, name: string) {
-
     if (!intervals.includes(0)) intervals.push(0)
-    if (intervals.includes(12)) intervals = intervals.filter(interval => interval != 12)
+    if (intervals.includes(12))
+      intervals = intervals.filter((interval) => interval != 12)
     intervals = intervals.sort((a, b) => a - b)
     this.intervals = intervals
     this.name = name
-  
   }
 
   public getNotes(
@@ -20,18 +19,22 @@ export class GenericalScale {
     numberOfNotes: number = this.intervals.length
   ): Array<NoteOne> {
     const notes = []
-    let currentNote = root
+    let nbOfOctave = 0
     for (let i = 0; i < numberOfNotes; i++) {
+      nbOfOctave = Math.floor(i / this.intervals.length)
+      const midiNumber = this.intervals[i % this.intervals.length] + root.getMidi() + 12 * nbOfOctave
+      const currentNote = new NoteOne(midiNumber)
       notes.push(currentNote)
-      currentNote = this.getNextNote(currentNote, root)
     }
     return notes
   }
 
   public getNextNote(note: NoteOne, root: NoteOne): NoteOne {
-    const interval = getPositiveInterval(root, note) //* We make sure that the difference in semi-tones with the root is positive
+    const minimumInterval = getPositiveMinimumInterval(root, note) //* We make sure that the difference in semi-tones with the root is positive
+    const interval = note.getMidi() - root.getMidi()
+    const nbOfOctave = interval % 12
     const currentNoteIndex =
-      interval == 0 ? 0 : this.intervals.indexOf(interval) //* If we've reached the root, we come back to the root
+      minimumInterval == 0 ? interval : this.intervals.indexOf(minimumInterval) //* If we've reached the root, we come back to the root
     if (currentNoteIndex == -1)
       throw new Error(
         'The note ' +
@@ -42,7 +45,8 @@ export class GenericalScale {
           root.getName()
       )
     const nextNoteIndex = (currentNoteIndex + 1) % this.intervals.length
-    const nextNoteMidi = root.getMidi() + this.intervals[nextNoteIndex]
+    const nextNoteMidi =
+      root.getMidi() + this.intervals[nextNoteIndex] + 12 * nbOfOctave
     return new NoteOne(nextNoteMidi)
   }
 }

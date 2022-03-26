@@ -39,13 +39,14 @@ import * as fs from 'fs'
 import { Midi, Track } from '@tonejs/midi'
 import { SimpleDownArpegeCompositor } from './compositor/SimpleDownArpegeCompositor'
 import { PentatonicScale } from './scales/PentatonicScale'
+import NoteOne from './notes/NoteOne'
 
 const compositor = new SimpleDownArpegeCompositor()
-const music = compositor.getMusic(12,undefined,new PentatonicScale())
+const music = compositor.getMusic(30,undefined,new PentatonicScale(), NoteOne.noteNameToNote('E3'))
 console.log(music.toString())
 
 const midi = new Midi()
 midi.tracks.push(music.getMidiTrack())
 
 // write the output buffer.aloc
-fs.writeFileSync('outputs/debugTS/arpegePentatonic1.mid', midi.toArray())
+fs.writeFileSync('outputs/debugTS/arpegePentatonic2.mid', midi.toArray())

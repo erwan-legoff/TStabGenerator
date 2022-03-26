@@ -113,4 +113,5 @@ export default class NoteOne implements NoteOneInterface {
   getPrimitiveNumber(): number {
     return this.midi % 12
   }
+
 }
