@@ -4,7 +4,7 @@
 // import TabLine from './TabLine'
 // import createTrackFromTabLine from './utils/createTrackFromTabLine'
 
-// import * as fs from 'fs'
+import * as fs from 'fs'
 // // Todo: Réfléchir à comment gérer les notes qui n'ont pas de temps (note tout court lol), ces notes étant une tonique ou autre, mais pas une note réellement jouée. Par contre la midiNote doit avoir une Note, un temps avant de sonner, ainsi qu'une durée.
 // // create a new midi file
 // var midi = new Midi()
@@ -36,10 +36,16 @@
 
 // console.log(tabLine.toString())
 
-// // write the output buffer.aloc
-// fs.writeFileSync('outputs/debugTS/output-1.mid', midi.toArray())
+import { Midi, Track } from '@tonejs/midi'
+import { SimpleDownArpegeCompositor } from './compositor/SimpleDownArpegeCompositor'
+import { PentatonicScale } from './scales/PentatonicScale'
 
-import { Note } from '@tonejs/midi/dist/Note'
-import testEnum from './enums/TestEnum'
+const compositor = new SimpleDownArpegeCompositor()
+const music = compositor.getMusic(12,undefined,new PentatonicScale())
+console.log(music.toString())
 
+const midi = new Midi()
+midi.tracks.push(music.getMidiTrack())
 
+// write the output buffer.aloc
+fs.writeFileSync('outputs/debugTS/arpegePentatonic1.mid', midi.toArray())

@@ -41,4 +41,8 @@ export class TrackOne {
     return this.playedNotes
   }
 
+  toString(): string {
+    return this.playedNotes.map(playedNote => playedNote.getNoteName()).join('--')
+  }
+
 }

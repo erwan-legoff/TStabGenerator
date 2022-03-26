@@ -58,4 +58,5 @@ export default class PlayedNote implements PlayedNoteOneInterface{
   getNote(): NoteOne {
     return this.note
   }
+
 }

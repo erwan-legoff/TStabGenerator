@@ -1,4 +1,3 @@
-import { Note } from '@tonejs/midi/dist/Note'
 import NoteOne from '../notes/NoteOne'
 import PlayedNote from '../notes/PlayedNoteOne'
 import { TrackOne } from '../notes/TrackOne'
@@ -20,10 +19,9 @@ export class SimpleDownArpegeCompositor implements CompositorInterface {
     let timeSpent = 0
     for (let i = 0; i < scaleNotes.length; i++) {
       const note = scaleNotes[i]
-      const time = timeSpent
+      const time = 0
       const duration = 1
       playedNotes.push(new PlayedNote(note, time, duration))
-      timeSpent += time - timeSpent + duration
     }
 
     return new TrackOne(playedNotes, tempo)

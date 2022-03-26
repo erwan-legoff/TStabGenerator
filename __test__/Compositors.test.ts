@@ -30,5 +30,14 @@ describe('Simple Down Arpege Compositor', () => {
     }
   })
 
+  it('should return played notes with the same time in between', () => {
+    const playedNotes = music.getPlayedNotes()
+    for (let i = 0; i < playedNotes.length - 1; i++) {
+      const playedNote = playedNotes[i]
+      const nextPlayedNote = playedNotes[i + 1]
+      expect(playedNote.getTimeBeforeStart()).toBe(nextPlayedNote.getTimeBeforeStart())
+    }
+  })
+
   
 })

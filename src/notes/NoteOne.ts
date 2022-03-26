@@ -1,5 +1,6 @@
 import NoteNameEng from '../enums/NoteNameEng'
 import noteEngEnums from '../enums/NoteNumberEng'
+import { NoteOneInterface } from './NoteOneInterface'
 
 export default class NoteOne implements NoteOneInterface {
   private name: string
