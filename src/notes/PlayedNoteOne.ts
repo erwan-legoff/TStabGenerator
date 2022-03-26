@@ -5,6 +5,12 @@ export default class PlayedNote implements PlayedNoteOneInterface{
   private note: NoteOne
   private timeBeforeStart: number
   private duration: number
+  /**
+   * 
+   * @param note the note to play
+   * @param timeBeforeStartRelativeToBeat in percentage of the beat (1 = 100%)
+   * @param durationRelativeToBeat in percentage of the beat (1 = 100%)
+   */
   constructor(
     note: NoteOne,
     timeBeforeStartRelativeToBeat: number = 0,
