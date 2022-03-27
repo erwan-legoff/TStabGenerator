@@ -18,4 +18,4 @@ const midi = new Midi()
 midi.tracks.push(music.getMidiTrack())
 
 // write the output in a mid file wich can directly be played 
-fs.writeFileSync('outputs/debugTS/randomSimplePentatonic1.mid', midi.toArray())
+fs.writeFileSync('outputs/debugTS/randomSimplePentatonic2.mid', midi.toArray())

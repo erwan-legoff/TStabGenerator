@@ -17,24 +17,27 @@ export class RandomSimpleCompositor implements CompositorInterface {
   ): TrackOne {
     //! Refactor to use playedNoteOneInterface and silence
     const playedNotes: PlayedNote[] = []
-    const notes: NoteOne[] = scale.getNotes(key)
+    const notes: NoteOne[] = scale.getNotes(key, 10)
     const timeBeforeStart = 0
     const silenceProbability: number = 0.05
-    
+
     for (let i = 0; i < nbOfNotes; i++) {
-      
-      
       if (Math.random() < silenceProbability) {
         const duration = Math.floor(Math.random()) + 1
         //! Refactor to use playedNoteOneInterface and silence
-        playedNotes.push(new PlayedNote(NoteOne.noteNameToNote('C4'), timeBeforeStart + duration, 0))
+        playedNotes.push(
+          new PlayedNote(
+            NoteOne.noteNameToNote('C4'),
+            timeBeforeStart + duration,
+            0
+          )
+        )
         console.log('silence')
       } else {
-        const duration = Math.floor(Math.random() * 3) + 1
+        const duration = Math.floor(Math.random() * 8) / 4
         const note = notes[Math.floor(Math.random() * (notes.length - 1))]
         playedNotes.push(new PlayedNote(note, timeBeforeStart, duration))
         console.log(note.getName())
-        
       }
     }
 
