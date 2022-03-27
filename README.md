@@ -4,8 +4,8 @@ A tiny TypeScript Project to generate pseudo random tabs in MIDI.
 
 # Todo List
 ## Doings
-- [ ] Add a way to generate random tabs (dumby)
-- [ ] Add a way to generate random tabs with options (like repetition frequency, etc.)
+- [ ] Add a way to generate random musics (dumby)
+- [ ] Add a way to generate random musics "smarter" (less repetition, more options, etc.)
 
 ## To do
 - [ ] README Documentation
