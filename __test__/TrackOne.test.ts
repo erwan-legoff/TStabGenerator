@@ -1,4 +1,4 @@
-import PlayedNote from '../src/notes/PlayedNoteOne'
+import PlayedNote from '../src/notes/playedNote/PlayedNoteOne'
 import { TrackOne } from '../src/notes/TrackOne'
 import { Midi, Track } from '@tonejs/midi'
 

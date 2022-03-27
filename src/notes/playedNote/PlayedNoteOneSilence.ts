@@ -1,4 +1,4 @@
-import { NoteOneSilence } from './NoteOneSilence'
+import { NoteOneSilence } from '../NoteOneSilence'
 import { PlayedNoteOneInterface } from './PlayedNoteOneInterface'
 
 export class PlayedNoteOneSilence implements PlayedNoteOneInterface {

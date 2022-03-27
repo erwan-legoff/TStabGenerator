@@ -1,4 +1,4 @@
-import NoteOne from './NoteOne'
+import NoteOne from '../NoteOne'
 import { PlayedNoteOneInterface } from './PlayedNoteOneInterface'
 
 export default class PlayedNote implements PlayedNoteOneInterface{

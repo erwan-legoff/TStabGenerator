@@ -1,6 +1,6 @@
 import { FretBoardGuitar } from '../src/instruments/fretBoards/FretBoardGuitar'
 import NoteOne from '../src/notes/NoteOne'
-import PlayedNote from '../src/notes/PlayedNoteOne'
+import PlayedNote from '../src/notes/playedNote/PlayedNoteOne'
 
 describe('fretboardfilling', () => {
   it('should add E2 to the string number one (the A string)', () => {

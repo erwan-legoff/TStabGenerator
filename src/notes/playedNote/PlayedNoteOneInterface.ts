@@ -1,4 +1,4 @@
-import { NoteOneInterface } from "./NoteOneInterface"
+import { NoteOneInterface } from "../NoteOneInterface"
 
 export interface PlayedNoteOneInterface {
   getNote(): NoteOneInterface

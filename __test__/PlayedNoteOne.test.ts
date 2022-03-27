@@ -1,5 +1,5 @@
 import NoteOne from "../src/notes/NoteOne";
-import PlayedNote from "../src/notes/PlayedNoteOne";
+import PlayedNote from "../src/notes/playedNote/PlayedNoteOne";
 
 describe('E2 Note', () => {
   const note = PlayedNote.getPlayedNoteFromNoteName('E2');

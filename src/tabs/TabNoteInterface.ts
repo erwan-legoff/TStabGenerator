@@ -1,4 +1,4 @@
-import { PlayedNoteOneInterface } from '../notes/PlayedNoteOneInterface'
+import { PlayedNoteOneInterface } from '../notes/playedNote/PlayedNoteOneInterface'
 
 export interface TabNoteInterface {
   getPlayedNote(): PlayedNoteOneInterface

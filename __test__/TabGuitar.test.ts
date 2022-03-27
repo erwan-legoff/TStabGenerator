@@ -1,5 +1,5 @@
 import NoteOne from '../src/notes/NoteOne'
-import PlayedNote from '../src/notes/PlayedNoteOne'
+import PlayedNote from '../src/notes/playedNote/PlayedNoteOne'
 import { TrackOne } from '../src/notes/TrackOne'
 import { TabGuitar } from '../src/tabs/TabGuitar'
 import { TabNoteSilence } from '../src/tabs/TabNoteSilence'

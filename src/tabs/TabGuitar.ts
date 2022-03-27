@@ -1,15 +1,13 @@
-import NoteOne from '../notes/NoteOne'
+import { FretBoardGuitar } from '../instruments/fretBoards/FretBoardGuitar'
+import { Guitar } from '../instruments/Guitar'
+import { NoteOneInterface } from '../notes/NoteOneInterface'
+import { PlayedNoteOneInterface } from '../notes/playedNote/PlayedNoteOneInterface'
 import { TrackOne } from '../notes/TrackOne'
-import { Tab } from './Tab'
-import TabLine from '../tabLines/TabLine'
-import TabNote from './TabNote'
 import { ChooseTabLineStrategy } from '../tabLines/chooseTabLineStrategy/ChooseTabLineStrategy'
 import { ChooseTabLineStrategySimple } from '../tabLines/chooseTabLineStrategy/ChooseTabLineStrategySimple'
-import { Guitar } from '../instruments/Guitar'
+import TabLine from '../tabLines/TabLine'
 import { StandardGuitarTuning } from '../tunings/StandardGuitarTuning'
-import { FretBoardGuitar } from '../instruments/fretBoards/FretBoardGuitar'
-import PlayedNote from '../notes/PlayedNoteOne'
-import { PlayedNoteOneInterface } from '../notes/PlayedNoteOneInterface'
+import { Tab } from './Tab'
 
 export class TabGuitar implements Tab {
   // readonly numberOfStrings: number = 6

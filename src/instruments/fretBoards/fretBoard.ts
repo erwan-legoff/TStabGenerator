@@ -1,5 +1,5 @@
-import { PlayedNoteOneInterface } from '../../notes/PlayedNoteOneInterface'
-import { PlayedNoteOneSilence } from '../../notes/PlayedNoteOneSilence'
+import { PlayedNoteOneInterface } from '../../notes/playedNote/PlayedNoteOneInterface'
+import { PlayedNoteOneSilence } from '../../notes/playedNote/PlayedNoteOneSilence'
 import TabLine from '../../tabLines/TabLine'
 import { Tuning } from '../../tunings/Tuning'
 //* implement fretBoard . En gros on veut qu'un instrument ait un fretboard et qu'un fretboard soit initialisé grace à un tuning avec un tableau de tabLines, c'est en fait le fretboard qui va recevoir les tabNotes de la tablature.

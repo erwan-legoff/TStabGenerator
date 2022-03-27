@@ -1,4 +1,4 @@
-<REAPER_PROJECT 0.1 "6.46/win64" 1644343943
+<REAPER_PROJECT 0.1 "6.23/win64" 1648367992
   RIPPLE 0
   GROUPOVERRIDE 0 0 0
   AUTOXFADE 1
@@ -14,9 +14,9 @@
   TIMEMODE 1 5 -1 30 0 0 -1
   VIDEO_CONFIG 0 0 256
   PANMODE 3
-  CURSOR 0
-  ZOOM 4.61122669 0 0
-  VZOOMEX 5 0
+  CURSOR 7.57826674224122
+  ZOOM 71.04526909813841 318 0
+  VZOOMEX 20 0
   USE_REC_CFG 0
   RECMODE 1
   SMPTESYNC 0 30 100 40 1000 300 0 0 1 0 0
@@ -53,7 +53,6 @@
     BEATLEN 4
     SAMPLES "" ""
     PATTERN 2863311530 2863311529
-    MULT 1
   >
   GLOBAL_AUTO -1
   TEMPO 120 4 4
@@ -64,7 +63,7 @@
   MASTERTRACKHEIGHT 0 0
   MASTERPEAKCOL 16576
   MASTERMUTESOLO 0
-  MASTERTRACKVIEW 0 0.6667 0.5 0.5 -1 -1 -1 0 0 0 -1 -1 0
+  MASTERTRACKVIEW 0 0.6667 0.5 0.5 0 -1 -1 0 0 0 -1 -1 0
   MASTERHWOUT 0 0 1 0 0 0 0 -1
   MASTER_NCH 2 2
   MASTER_VOLUME 1 0 -1 -1 1
@@ -80,12 +79,210 @@
   >
   <TEMPOENVEX
     EGUID {E280131C-DA12-4107-A447-8D0B32C126C1}
-    ACT 1 -1
+    ACT 0 -1
     VIS 1 0 1
     LANEHEIGHT 0 0
     ARM 0
     DEFSHAPE 1 -1 -1
   >
   <PROJBAY
+  >
+  <TRACK {62DE8B07-06C2-448F-8B74-6C3446009417}
+    NAME arpegechromatic
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 0.07271977520138 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 -1 -1
+    FREEMODE 0
+    SEL 1
+    REC 0 0 1 0 0 0 0
+    VU 2
+    TRACKHEIGHT 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {62DE8B07-06C2-448F-8B74-6C3446009417}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 469 182 737 624
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+      BYPASS 0 0 0
+      <VST "VSTi: ReaSynth (Cockos)" reasynth.dll 0 "" 1919251321<5653547265737972656173796E746800> ""
+        eXNlcu9e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAABAAAAAAAAAAAAAEAA=
+        776t3g3wrd6mm8Q7F7fROgAAAAAAAAAAGQRWPs5NAD/pZ4g9AAAAAAAAAD8AAIA/AACAPwAAAD8AAAAAAAAAAA==
+        AAAQAAAA
+      >
+      FLOATPOS 0 0 0 0
+      FXID {3CA1243C-FDF9-40F2-9FB7-65DD32B179B2}
+      WAK 0 0
+    >
+    <ITEM
+      POSITION 0.65058610250708
+      SNAPOFFS 0
+      LENGTH 6
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {B2A3DAB0-AE98-485D-9716-7E202697DE8C}
+      IID 2
+      NAME arpegechromatic1.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {CB254942-36C2-4E4F-8A15-5ABF9B7748EF}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {9974D6AF-E704-4826-8A67-851ACDCBB47B}
+        <X 0 0
+          /wM=
+        >
+        <X 0 0
+          /wM=
+        >
+        E 0 c0 00 00
+        E 0 90 3c 7f
+        E 480 80 3c 00
+        E 0 90 3d 7f
+        E 480 80 3d 00
+        E 0 90 3e 7f
+        E 480 80 3e 00
+        E 0 90 3f 7f
+        E 480 80 3f 00
+        E 0 90 40 7f
+        E 480 80 40 00
+        E 0 90 41 7f
+        E 480 80 41 00
+        E 0 90 42 7f
+        E 480 80 42 00
+        E 0 90 43 7f
+        E 480 80 43 00
+        E 0 90 44 7f
+        E 480 80 44 00
+        E 0 90 45 7f
+        E 480 80 45 00
+        E 0 90 46 7f
+        E 480 80 46 00
+        E 0 90 47 7f
+        E 479 80 47 00
+        E 1 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {A4E0FA30-09AE-49EE-A2EB-3204DE67C1CB}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 8
+      >
+    >
+    <ITEM
+      POSITION 7.60078759433236
+      SNAPOFFS 0
+      LENGTH 15
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 1
+      IGUID {D04EEAA2-C9C5-4AAA-A24D-F93DDB8CC5B9}
+      IID 5
+      NAME arpegePentatonic2.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {53C7A25C-51A6-46DF-AB78-CE518F29C821}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {5B0CA167-3E21-42CF-82E4-DFC52DF9B89E}
+        <X 0 0
+          /wM=
+        >
+        <X 0 0
+          /wM=
+        >
+        E 0 c0 00 00
+        E 0 90 34 7f
+        E 480 80 34 00
+        E 0 90 37 7f
+        E 480 80 37 00
+        E 0 90 39 7f
+        E 480 80 39 00
+        E 0 90 3b 7f
+        E 480 80 3b 00
+        E 0 90 3e 7f
+        E 480 80 3e 00
+        E 0 90 40 7f
+        E 480 80 40 00
+        E 0 90 43 7f
+        E 480 80 43 00
+        E 0 90 45 7f
+        E 480 80 45 00
+        E 0 90 47 7f
+        E 480 80 47 00
+        E 0 90 4a 7f
+        E 480 80 4a 00
+        E 0 90 4c 7f
+        E 480 80 4c 00
+        E 0 90 4f 7f
+        E 480 80 4f 00
+        E 0 90 51 7f
+        E 480 80 51 00
+        E 0 90 53 7f
+        E 480 80 53 00
+        E 0 90 56 7f
+        E 480 80 56 00
+        E 0 90 58 7f
+        E 480 80 58 00
+        E 0 90 5b 7f
+        E 480 80 5b 00
+        E 0 90 5d 7f
+        E 480 80 5d 00
+        E 0 90 5f 7f
+        E 480 80 5f 00
+        E 0 90 62 7f
+        E 480 80 62 00
+        E 0 90 64 7f
+        E 480 80 64 00
+        E 0 90 67 7f
+        E 480 80 67 00
+        E 0 90 69 7f
+        E 480 80 69 00
+        E 0 90 6b 7f
+        E 480 80 6b 00
+        E 0 90 6e 7f
+        E 480 80 6e 00
+        E 0 90 70 7f
+        E 480 80 70 00
+        E 0 90 73 7f
+        E 480 80 73 00
+        E 0 90 75 7f
+        E 480 80 75 00
+        E 0 90 77 7f
+        E 480 80 77 00
+        E 0 90 7a 7f
+        E 479 80 7a 00
+        E 1 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {C6EE84EB-866D-4EA0-BC60-E20D2FF6406D}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 17
+      >
+    >
   >
 >

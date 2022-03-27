@@ -1,4 +1,4 @@
-import PlayedNote from '../notes/PlayedNoteOne'
+import PlayedNote from '../notes/playedNote/PlayedNoteOne'
 import TabLine from '../tabLines/TabLine'
 
 export interface Tab {

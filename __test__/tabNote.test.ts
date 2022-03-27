@@ -1,5 +1,5 @@
 import NoteOne from '../src/notes/NoteOne'
-import PlayedNote from '../src/notes/PlayedNoteOne'
+import PlayedNote from '../src/notes/playedNote/PlayedNoteOne'
 import { ChooseFretNumberStrategySimple } from '../src/tabs/ChooseFretNumberStrategy/ChooseFretNumberStrategySimple'
 import TabNote from '../src/tabs/TabNote'
 

@@ -1,6 +1,8 @@
-import PlayedNote from "./PlayedNoteOne";
+import PlayedNote from "./playedNote/PlayedNoteOne";
 import { Track, Midi } from "@tonejs/midi";
-
+/**
+ ** A class that can convert played notes into notes ready to go into a MidiTrack
+ */
 export class TrackOne {
   playedNotes: PlayedNote[] = []
   readonly beatLength: number = 1 // in seconds
