@@ -1,0 +1,43 @@
+import NoteOne from '../notes/NoteOne'
+import PlayedNote from '../notes/playedNote/PlayedNoteOne'
+import { PlayedNoteOneInterface } from '../notes/playedNote/PlayedNoteOneInterface'
+import { PlayedNoteOneSilence } from '../notes/playedNote/PlayedNoteOneSilence'
+import { TrackOne } from '../notes/TrackOne'
+import { GenericalScale } from '../scales/GenericalScale'
+import { PentatonicScale } from '../scales/PentatonicScale'
+import { CompositorInterface } from './CompositorInterface'
+import { StyleOptions } from './StyleOptions'
+
+export class RandomSimpleCompositor implements CompositorInterface {
+  public getMusic(
+    nbOfNotes: number = 10,
+    tempo: number = 120,
+    scale: GenericalScale = new PentatonicScale(),
+    key: NoteOne = NoteOne.noteNameToNote('C4')
+  ): TrackOne {
+    //! Refactor to use playedNoteOneInterface and silence
+    const playedNotes: PlayedNote[] = []
+    const notes: NoteOne[] = scale.getNotes(key)
+    const timeBeforeStart = 0
+    const silenceProbability: number = 0.05
+    
+    for (let i = 0; i < nbOfNotes; i++) {
+      
+      
+      if (Math.random() < silenceProbability) {
+        const duration = Math.floor(Math.random()) + 1
+        //! Refactor to use playedNoteOneInterface and silence
+        playedNotes.push(new PlayedNote(NoteOne.noteNameToNote('C4'), timeBeforeStart + duration, 0))
+        console.log('silence')
+      } else {
+        const duration = Math.floor(Math.random() * 3) + 1
+        const note = notes[Math.floor(Math.random() * (notes.length - 1))]
+        playedNotes.push(new PlayedNote(note, timeBeforeStart, duration))
+        console.log(note.getName())
+        
+      }
+    }
+
+    return new TrackOne(playedNotes, tempo)
+  }
+}
