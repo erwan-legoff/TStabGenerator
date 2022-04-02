@@ -1,7 +1,7 @@
 import NoteOne from '../notes/NoteOne'
 import PlayedNote from '../notes/playedNote/PlayedNoteOne'
 import { TrackOne } from '../notes/TrackOne'
-import { ChromaticScale } from '../scales/ChromaticScale'
+import { ChromaticScale } from '../scales/Scales'
 import { GenericalScale } from '../scales/GenericalScale'
 import { CompositorInterface } from './CompositorInterface'
 /**

@@ -4,7 +4,7 @@ import { PlayedNoteOneInterface } from '../notes/playedNote/PlayedNoteOneInterfa
 import { PlayedNoteOneSilence } from '../notes/playedNote/PlayedNoteOneSilence'
 import { TrackOne } from '../notes/TrackOne'
 import { GenericalScale } from '../scales/GenericalScale'
-import { PentatonicScale } from '../scales/PentatonicScale'
+import { PentatonicScale } from '../scales/Scales'
 import { CompositorInterface } from './CompositorInterface'
 import { StyleOptions } from './StyleOptions'
 

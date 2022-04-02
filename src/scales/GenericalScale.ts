@@ -23,18 +23,18 @@ export class GenericalScale {
    */
   public getNotes(
     root: NoteOne,
-    numberOfNotes: number = this.intervals.length
+    numberOfNotes: number = this.intervals.length + 1 // +1 to include the root at the second octave
   ): Array<NoteOne> {
     const notes = []
-    let nbOfOctave = 0
+    
     for (let i = 0; i < numberOfNotes; i++) {
-      nbOfOctave = Math.floor(i / this.intervals.length)
-      const midiNumber =
-        this.intervals[i % this.intervals.length] +
-        root.getMidi() +
-        12 * nbOfOctave
-      const currentNote = new NoteOne(midiNumber)
-      notes.push(currentNote)
+      const nbOfIntervals = this.intervals.length
+      const octave = Math.floor(i / nbOfIntervals)
+      const currentInterval = this.intervals[i % nbOfIntervals] // We make sure not to go out of the table with the modulo
+      const rootWithOctave = root.getMidi() + 12 * octave
+      const midiNumber = currentInterval + rootWithOctave
+
+      notes.push(new NoteOne(midiNumber))
     }
     return notes
   }

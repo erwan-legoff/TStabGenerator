@@ -2,7 +2,7 @@ import { RandomSimpleCompositor } from '../src/compositor/RandomSimpleCompositor
 import { SimpleDownArpegeCompositor } from '../src/compositor/SimpleDownArpegeCompositor'
 import NoteOne from '../src/notes/NoteOne'
 import { TrackOne } from '../src/notes/TrackOne'
-import { ChromaticScale } from '../src/scales/ChromaticScale'
+import { ChromaticScale } from '../src/scales/Scales'
 
 describe('Simple Down Arpege Compositor', () => {
   const compositor = new SimpleDownArpegeCompositor()
