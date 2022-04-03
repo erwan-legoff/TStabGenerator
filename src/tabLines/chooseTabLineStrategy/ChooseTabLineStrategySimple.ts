@@ -1,8 +1,8 @@
-import NoteOne from '../../notes/NoteOne'
+import { NoteOneInterface } from '../../notes/NoteOneInterface'
 import { NoteOneSilence } from '../../notes/NoteOneSilence'
-
 import TabLine from '../TabLine'
 import { ChooseTabLineStrategy } from './ChooseTabLineStrategy'
+
 
 export class ChooseTabLineStrategySimple implements ChooseTabLineStrategy {
   /**

@@ -65,4 +65,8 @@ export class TabGuitar implements Tab {
     })
     return tab
   }
+
+  toString(): string {
+    return this.printTab()
+  }
 }
