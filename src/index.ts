@@ -10,6 +10,7 @@ import { TabGuitar } from './tabs/TabGuitar'
 // ?IDEA: En se concentrant sur une mesure à 4 temps, on peut imaginer qu'on peut définir un nombre de mesures, de demi-mesures, de quarts de mesure, etc.
 // ?IDEA: On peut imaginer un objet "mesure" qui contient un nombre donné d'objets temps, qui possèdent un nombre donné de demi-temps,
 // ?IDEA: Ou alors trouver une façon algorithmique pour s'assurer qu'une note est jouée sur le temps ou autre
+// ?IDEA: On pourrait simplement diviser la mesure par 16, et faire un algorithme qui s'occupe de récupérer/ajouter les notes dans le bon temps/subdivision.
 
 
 // This is the object that will create our music
