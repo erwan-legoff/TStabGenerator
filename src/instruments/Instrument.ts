@@ -9,7 +9,7 @@ export interface Instrument {
   setCapo(capo: number): void
   getTuning(): Tuning
   getName(): string
-  getNumberOfStrings(): number
+  getStringCount(): number
   getCapo(): number
   getFretBoard(): FretBoardGuitar
 }

@@ -32,7 +32,7 @@ export class Guitar implements Instrument {
     return this.name
   }
 
-  getNumberOfStrings(): number {
+  getStringCount(): number {
     return this.tuning.getNotes().length
   }
 

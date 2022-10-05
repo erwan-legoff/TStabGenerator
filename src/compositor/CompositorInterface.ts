@@ -5,7 +5,7 @@ import { StyleOptions } from "./StyleOptions";
 
 export interface CompositorInterface {
   getMusic(
-    nbOfNotes?: number,
+    notesCount?: number,
     tempo?: number,
     scale?: GenericalScale,
     key?: NoteOne,
