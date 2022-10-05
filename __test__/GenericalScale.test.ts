@@ -1,6 +1,5 @@
 import NoteOne from '../src/notes/NoteOne'
-import { ChromaticScale } from '../src/scales/Scales'
-import { PentatonicScale } from '../src/scales/Scales'
+import { ChromaticScale, PentatonicScale } from '../src/scales/Scales'
 
 describe('chromatic scale', () => {
   const E4 = NoteOne.noteNameToNote('E4')
@@ -41,9 +40,7 @@ describe('chromatic scale', () => {
     const chromaticResult = chromaticScale.getNotes(C4, 25)
     expect(chromaticResult[24].getName()).toBe(C6.getName())
   })
-
 })
-
 
 describe('pentatonic scale', () => {
   const Aroot = NoteOne.noteNameToNote('A4')
@@ -66,6 +63,3 @@ describe('pentatonic scale', () => {
     expect(pentatonicResult).toEqual(expectedPentatonicResult)
   })
 })
-
-
-

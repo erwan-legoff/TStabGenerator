@@ -9,13 +9,13 @@ import { CompositorInterface } from './CompositorInterface'
  */
 export class SimpleDownArpegeCompositor implements CompositorInterface {
   getMusic(
-    nbOfNotes?: number,
+    notesCount?: number,
     tempo: number = 120,
     scale: GenericalScale = new ChromaticScale(),
     key: NoteOne = NoteOne.noteNameToNote('C4')
   ): TrackOne {
     const playedNotes: PlayedNote[] = []
-    const scaleNotes = scale.getNotes(key, nbOfNotes) // If nbOfNotes is not defined, it will return one octave.
+    const scaleNotes = scale.getNotes(key, notesCount) // If notesCount is not defined, it will return one octave.
     let timeSpent = 0
     for (let i = 0; i < scaleNotes.length; i++) {
       const note = scaleNotes[i]

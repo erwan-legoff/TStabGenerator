@@ -10,7 +10,7 @@ import { StyleOptions } from './StyleOptions'
 
 export class RandomSimpleCompositor implements CompositorInterface {
   public getMusic(
-    nbOfNotes: number = 10,
+    notesCount: number = 10,
     tempo: number = 120,
     scale: GenericalScale = new PentatonicScale(),
     key: NoteOne = NoteOne.noteNameToNote('C4')
@@ -21,7 +21,7 @@ export class RandomSimpleCompositor implements CompositorInterface {
     const timeBeforeStart = 0
     const silenceProbability: number = 0.05
 
-    for (let i = 0; i < nbOfNotes; i++) {
+    for (let i = 0; i < notesCount; i++) {
       if (Math.random() < silenceProbability) {
         const duration = Math.floor(Math.random()) + 1
         //! Refactor to use playedNoteOneInterface and silence

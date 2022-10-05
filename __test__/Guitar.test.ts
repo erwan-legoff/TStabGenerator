@@ -5,7 +5,7 @@ import { StandardGuitarTuning } from "../src/tunings/StandardGuitarTuning"
 describe("Guitar", () => {
   const guitar = new Guitar(new StandardGuitarTuning(), 0)
   it("should have the right number of strings", () => {
-    expect(guitar.getNumberOfStrings()).toBe(6)
+    expect(guitar.getStringCount()).toBe(6)
   })
   it("should have the right capo", () => {
     expect(guitar.getCapo()).toBe(0)

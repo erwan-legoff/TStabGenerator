@@ -3,7 +3,11 @@ import * as fs from 'fs'
 import { RandomSimpleCompositor } from './compositor/RandomSimpleCompositor'
 import { SimpleDownArpegeCompositor } from './compositor/SimpleDownArpegeCompositor'
 import NoteOne from './notes/NoteOne'
-import { PentatonicScale, AlgerianScale, MinorNaturalScale } from './scales/Scales'
+import {
+  PentatonicScale,
+  AlgerianScale,
+  MinorNaturalScale,
+} from './scales/Scales'
 import { TabGuitar } from './tabs/TabGuitar'
 // ?IDEA: Faire un système de rythme quantifié avec des subdivisions.
 // ?IDEA: On peut imaginer un objet "mesure" qui contient un nombre donné de temps.
@@ -11,7 +15,6 @@ import { TabGuitar } from './tabs/TabGuitar'
 // ?IDEA: On peut imaginer un objet "mesure" qui contient un nombre donné d'objets temps, qui possèdent un nombre donné de demi-temps,
 // ?IDEA: Ou alors trouver une façon algorithmique pour s'assurer qu'une note est jouée sur le temps ou autre
 // ?IDEA: On pourrait simplement diviser la mesure par 16, et faire un algorithme qui s'occupe de récupérer/ajouter les notes dans le bon temps/subdivision.
-
 
 // This is the object that will create our music
 const compositor = new RandomSimpleCompositor()
@@ -32,7 +35,7 @@ console.log(tabGuitar.toString())
 const midi = new Midi()
 midi.tracks.push(music.getMidiTrack())
 
-// write the output in a mid file wich can directly be played 
+// write the output in a mid file wich can directly be played
 fs.writeFileSync(
   'outputs/debugTS/randomSimpleMinorNaturalScale5.mid',
   midi.toArray()

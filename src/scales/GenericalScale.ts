@@ -28,9 +28,9 @@ export class GenericalScale {
     const notes = []
     
     for (let i = 0; i < numberOfNotes; i++) {
-      const nbOfIntervals = this.intervals.length
-      const octave = Math.floor(i / nbOfIntervals)
-      const currentInterval = this.intervals[i % nbOfIntervals] // We make sure not to go out of the table with the modulo
+      const intervalsCount = this.intervals.length
+      const octave = Math.floor(i / intervalsCount)
+      const currentInterval = this.intervals[i % intervalsCount] // We make sure not to go out of the table with the modulo
       const rootWithOctave = root.getMidi() + 12 * octave
       const midiNumber = currentInterval + rootWithOctave
 
