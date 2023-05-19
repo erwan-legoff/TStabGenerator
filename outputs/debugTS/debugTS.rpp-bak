@@ -1,4 +1,4 @@
-<REAPER_PROJECT 0.1 "6.23/win64" 1648367992
+<REAPER_PROJECT 0.1 "6.52/win64" 1648406388
   RIPPLE 0
   GROUPOVERRIDE 0 0 0
   AUTOXFADE 1
@@ -14,9 +14,9 @@
   TIMEMODE 1 5 -1 30 0 0 -1
   VIDEO_CONFIG 0 0 256
   PANMODE 3
-  CURSOR 7.57826674224122
-  ZOOM 71.04526909813841 318 0
-  VZOOMEX 20 0
+  CURSOR 154.63725666242749
+  ZOOM 27.2793251189702 3960 0
+  VZOOMEX 17 0
   USE_REC_CFG 0
   RECMODE 1
   SMPTESYNC 0 30 100 40 1000 300 0 0 1 0 0
@@ -53,6 +53,7 @@
     BEATLEN 4
     SAMPLES "" ""
     PATTERN 2863311530 2863311529
+    MULT 1
   >
   GLOBAL_AUTO -1
   TEMPO 120 4 4
@@ -92,7 +93,7 @@
     PEAKCOL 16576
     BEAT -1
     AUTOMODE 0
-    VOLPAN 0.07271977520138 0 -1 -1 1
+    VOLPAN 0.21871375624299 0 -1 -1 1
     MUTESOLO 0 0 0
     IPHASE 0
     PLAYOFFS 0 1
@@ -103,7 +104,7 @@
     SEL 1
     REC 0 0 1 0 0 0 0
     VU 2
-    TRACKHEIGHT 0 0 0 0 0 0
+    TRACKHEIGHT 279 0 0 0 0 0
     INQ 0 0 0 0.5 100 0 0 100
     NCHAN 2
     FX 1
@@ -112,18 +113,38 @@
     MIDIOUT -1
     MAINSEND 1 0
     <FXCHAIN
-      WNDRECT 469 182 737 624
-      SHOW 0
+      WNDRECT 555 598 899 378
+      SHOW 1
       LASTSEL 0
       DOCKED 0
       BYPASS 0 0 0
-      <VST "VSTi: ReaSynth (Cockos)" reasynth.dll 0 "" 1919251321<5653547265737972656173796E746800> ""
-        eXNlcu9e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAABAAAAAAAAAAAAAEAA=
-        776t3g3wrd6mm8Q7F7fROgAAAAAAAAAAGQRWPs5NAD/pZ4g9AAAAAAAAAD8AAIA/AACAPwAAAD8AAAAAAAAAAA==
+      <VST "VSTi: Iowa Alto Sax (bigcat) (32 out)" "Iowa Alto Sax - 64.dll" 0 "" 1935360352<565354735B4160696F776120616C746F> ""
+        YEFbc+5e7f4AAAAAIAAAAAEAAAAAAAAAAgAAAAAAAAAEAAAAAAAAAAgAAAAAAAAAEAAAAAAAAAAgAAAAAAAAAEAAAAAAAAAAgAAAAAAAAAAAAQAAAAAAAAACAAAAAAAA
+        AAQAAAAAAAAACAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAAABAAAAAAAAAAIAAAAAAAAABAAAAAAAAAAIAAAAAAAAABAAAAAAAAAAIAAAAAAA
+        AABAAAAAAAAAAIAAAAAAAAAAAAEAAAAAAAAAAgAAAAAAAAAEAAAAAAAAAAgAAAAAAAAAEAAAAAAAAAAgAAAAAAAAAEAAAAAAAAAAgAAAAAD3BgAAAQAAAAAAEAA=
+        SW93YSBBbHRvIFNheCAtIDY0Lm1zZQBErAAARKwAAAEAAAABAAAAAAAAAAAAAABAAAAAQAAAAAIAAAAAAAAAAAAAAAAAAAD3/z/AAAAAAAAAAAABAAAAAQAAAAAAQEAA
+        AAAAAAAAAND///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACAAAAAAAAADUAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAfwAAAH8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA2AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD6QwAAAAAA
+        AJZCAAAAAH8AAAB/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
         AAAQAAAA
       >
       FLOATPOS 0 0 0 0
-      FXID {3CA1243C-FDF9-40F2-9FB7-65DD32B179B2}
+      FXID {81988342-5E73-4DCC-9B2B-B86A367C78D9}
       WAK 0 0
     >
     <ITEM
@@ -148,12 +169,6 @@
         HASDATA 1 480 QN
         CCINTERP 32
         POOLEDEVTS {9974D6AF-E704-4826-8A67-851ACDCBB47B}
-        <X 0 0
-          /wM=
-        >
-        <X 0 0
-          /wM=
-        >
         E 0 c0 00 00
         E 0 90 3c 7f
         E 480 80 3c 00
@@ -185,6 +200,7 @@
         GUID {A4E0FA30-09AE-49EE-A2EB-3204DE67C1CB}
         IGNTEMPO 0 120 4 4
         SRCCOLOR 8
+        VELLANE -1 100 0
       >
     >
     <ITEM
@@ -196,7 +212,7 @@
       FADEIN 1 0 0 1 0 0 0
       FADEOUT 1 0 0 1 0 0 0
       MUTE 0 0
-      SEL 1
+      SEL 0
       IGUID {D04EEAA2-C9C5-4AAA-A24D-F93DDB8CC5B9}
       IID 5
       NAME arpegePentatonic2.mid
@@ -209,12 +225,6 @@
         HASDATA 1 480 QN
         CCINTERP 32
         POOLEDEVTS {5B0CA167-3E21-42CF-82E4-DFC52DF9B89E}
-        <X 0 0
-          /wM=
-        >
-        <X 0 0
-          /wM=
-        >
         E 0 c0 00 00
         E 0 90 34 7f
         E 480 80 34 00
@@ -282,6 +292,589 @@
         GUID {C6EE84EB-866D-4EA0-BC60-E20D2FF6406D}
         IGNTEMPO 0 120 4 4
         SRCCOLOR 17
+        VELLANE -1 100 0
+      >
+    >
+    <ITEM
+      POSITION 22.98534470668528
+      SNAPOFFS 0
+      LENGTH 23.5
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {959B066F-C6DC-4BF5-B463-AFF44A1A24C7}
+      IID 7
+      NAME randomSimplePentatonic1.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {01FE2651-D685-4D58-9210-AFD0FACDA9CB}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {D9D5D490-6C4B-4374-AD25-54E05FAAFA88}
+        <X 0 0
+          /wM=
+        >
+        <X 0 0
+          /wM=
+        >
+        E 0 c0 00 00
+        E 0 90 40 7f
+        E 480 80 40 00
+        E 0 90 47 7f
+        E 0 80 47 00
+        E 0 90 43 7f
+        E 960 80 43 00
+        E 0 90 45 7f
+        E 1440 80 45 00
+        E 0 90 47 7f
+        E 480 80 47 00
+        E 0 90 45 7f
+        E 480 80 45 00
+        E 0 90 47 7f
+        E 0 80 47 00
+        E 1440 90 3c 7f
+        E 0 80 3c 00
+        E 1440 90 45 7f
+        E 0 80 45 00
+        E 0 90 45 7f
+        E 960 80 45 00
+        E 1440 90 3c 7f
+        E 0 80 3c 00
+        E 1440 90 45 7f
+        E 960 80 45 00
+        E 0 90 45 7f
+        E 960 80 45 00
+        E 0 90 40 7f
+        E 0 80 40 00
+        E 0 90 47 7f
+        E 960 80 47 00
+        E 0 90 40 7f
+        E 960 80 40 00
+        E 0 90 43 7f
+        E 480 80 43 00
+        E 0 90 45 7f
+        E 960 80 45 00
+        E 0 90 45 7f
+        E 480 80 45 00
+        E 0 90 40 7f
+        E 960 80 40 00
+        E 0 90 40 7f
+        E 960 80 40 00
+        E 480 90 3c 7f
+        E 0 80 3c 00
+        E 480 90 45 7f
+        E 480 80 45 00
+        E 0 90 43 7f
+        E 480 80 43 00
+        E 0 90 43 7f
+        E 480 80 43 00
+        E 0 90 43 7f
+        E 0 80 43 00
+        E 0 90 40 7f
+        E 1440 80 40 00
+        E 0 90 3c 7f
+        E 0 80 3c 00
+        E 0 90 45 7f
+        E 479 80 45 00
+        E 0 90 43 7f
+        E 0 80 43 00
+        E 1 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {D46DF0E5-6143-4B77-8122-6FEF7F3352A8}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 23
+      >
+    >
+    <ITEM
+      POSITION 46.8855990312295
+      SNAPOFFS 0
+      LENGTH 30
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {1DA5BB41-4DC2-48B3-95B3-6054538381C2}
+      IID 8
+      NAME randomSimplePentatonic1.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {48CAB050-A0E8-4393-8573-1F8046D5CD1E}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {466A8478-8937-430B-8ACF-B8BB493E2898}
+        <X 0 0
+          /wM=
+        >
+        <X 0 0
+          /wM=
+        >
+        E 0 c0 00 00
+        E 0 90 45 7f
+        E 480 80 45 00
+        E 0 90 45 7f
+        E 960 80 45 00
+        E 0 90 47 7f
+        E 1440 80 47 00
+        E 0 90 47 7f
+        E 480 80 47 00
+        E 480 90 3c 7f
+        E 0 80 3c 00
+        E 480 90 45 7f
+        E 1440 80 45 00
+        E 0 90 43 7f
+        E 1440 80 43 00
+        E 480 90 3c 7f
+        E 0 80 3c 00
+        E 480 90 47 7f
+        E 480 80 47 00
+        E 0 90 43 7f
+        E 960 80 43 00
+        E 480 90 3c 7f
+        E 0 80 3c 00
+        E 480 90 45 7f
+        E 480 80 45 00
+        E 480 90 3c 7f
+        E 0 80 3c 00
+        E 480 90 45 7f
+        E 480 80 45 00
+        E 0 90 43 7f
+        E 480 80 43 00
+        E 0 90 45 7f
+        E 1440 80 45 00
+        E 480 90 3c 7f
+        E 0 80 3c 00
+        E 480 90 47 7f
+        E 480 80 47 00
+        E 0 90 43 7f
+        E 1440 80 43 00
+        E 0 90 47 7f
+        E 960 80 47 00
+        E 0 90 40 7f
+        E 1440 80 40 00
+        E 0 90 43 7f
+        E 960 80 43 00
+        E 0 90 47 7f
+        E 1440 80 47 00
+        E 480 90 3c 7f
+        E 0 80 3c 00
+        E 480 90 45 7f
+        E 960 80 45 00
+        E 0 90 47 7f
+        E 1440 80 47 00
+        E 0 90 47 7f
+        E 960 80 47 00
+        E 0 90 47 7f
+        E 480 80 47 00
+        E 480 90 3c 7f
+        E 0 80 3c 00
+        E 480 90 43 7f
+        E 959 80 43 00
+        E 1 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {DDD3FDD4-7F80-46B0-B2E0-D8123B3EDB1B}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 25
+      >
+    >
+    <ITEM
+      POSITION 77.33097600645851
+      SNAPOFFS 0
+      LENGTH 36
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {71B5861B-B2BB-437C-B8FC-C4F691783372}
+      IID 9
+      NAME randomSimplePentatonic1.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {EC7E9C06-88E9-4B50-AB12-0960B85D9DAD}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {B2B5A190-3CE9-48DE-8D43-3594438055EA}
+        <X 0 0
+          /wM=
+        >
+        <X 0 0
+          /wM=
+        >
+        E 0 c0 00 00
+        E 0 90 47 7f
+        E 960 80 47 00
+        E 0 90 47 7f
+        E 1440 80 47 00
+        E 0 90 45 7f
+        E 960 80 45 00
+        E 0 90 45 7f
+        E 1440 80 45 00
+        E 0 90 40 7f
+        E 960 80 40 00
+        E 0 90 45 7f
+        E 1440 80 45 00
+        E 0 90 40 7f
+        E 960 80 40 00
+        E 0 90 45 7f
+        E 1440 80 45 00
+        E 0 90 45 7f
+        E 960 80 45 00
+        E 0 90 43 7f
+        E 960 80 43 00
+        E 0 90 47 7f
+        E 960 80 47 00
+        E 0 90 40 7f
+        E 480 80 40 00
+        E 0 90 43 7f
+        E 1440 80 43 00
+        E 0 90 43 7f
+        E 1440 80 43 00
+        E 0 90 45 7f
+        E 1440 80 45 00
+        E 0 90 45 7f
+        E 1440 80 45 00
+        E 0 90 45 7f
+        E 1440 80 45 00
+        E 0 90 43 7f
+        E 480 80 43 00
+        E 0 90 43 7f
+        E 960 80 43 00
+        E 0 90 40 7f
+        E 1440 80 40 00
+        E 0 90 47 7f
+        E 1440 80 47 00
+        E 0 90 47 7f
+        E 1440 80 47 00
+        E 0 90 45 7f
+        E 1440 80 45 00
+        E 0 90 43 7f
+        E 480 80 43 00
+        E 0 90 45 7f
+        E 1440 80 45 00
+        E 0 90 47 7f
+        E 1440 80 47 00
+        E 480 90 3c 7f
+        E 0 80 3c 00
+        E 480 90 43 7f
+        E 480 80 43 00
+        E 0 90 47 7f
+        E 960 80 47 00
+        E 0 90 40 7f
+        E 1439 80 40 00
+        E 1 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {0AABF4AF-A793-4A26-A735-8D7F4C0F17A2}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 27
+      >
+    >
+    <ITEM
+      POSITION 113.88513412233442
+      SNAPOFFS 0
+      LENGTH 25.5
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {B8FA18A8-E92D-4A99-8BF9-BF4B33945AC8}
+      IID 10
+      NAME randomSimplePentatonic1.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {8FD46E0B-B740-4802-BB5F-F21F53D4E570}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {F12CEF8C-6299-4AB0-AD52-ADF28E46E00A}
+        <X 0 0
+          /wM=
+        >
+        <X 0 0
+          /wM=
+        >
+        E 0 c0 00 00
+        E 0 90 47 7f
+        E 0 80 47 00
+        E 0 90 45 7f
+        E 0 80 45 00
+        E 0 90 47 7f
+        E 1080 80 47 00
+        E 0 90 43 7f
+        E 1560 80 43 00
+        E 0 90 45 7f
+        E 1560 80 45 00
+        E 0 90 47 7f
+        E 720 80 47 00
+        E 0 90 43 7f
+        E 120 80 43 00
+        E 0 90 43 7f
+        E 480 80 43 00
+        E 0 90 43 7f
+        E 1560 80 43 00
+        E 0 90 45 7f
+        E 1080 80 45 00
+        E 0 90 40 7f
+        E 1680 80 40 00
+        E 480 90 3c 7f
+        E 0 80 3c 00
+        E 480 90 40 7f
+        E 1800 80 40 00
+        E 0 90 45 7f
+        E 1560 80 45 00
+        E 0 90 40 7f
+        E 1320 80 40 00
+        E 0 90 40 7f
+        E 0 80 40 00
+        E 0 90 43 7f
+        E 960 80 43 00
+        E 0 90 45 7f
+        E 1200 80 45 00
+        E 0 90 43 7f
+        E 240 80 43 00
+        E 0 90 47 7f
+        E 1320 80 47 00
+        E 480 90 3c 7f
+        E 0 80 3c 00
+        E 480 90 43 7f
+        E 1080 80 43 00
+        E 0 90 45 7f
+        E 0 80 45 00
+        E 0 90 43 7f
+        E 960 80 43 00
+        E 0 90 45 7f
+        E 0 80 45 00
+        E 0 90 43 7f
+        E 240 80 43 00
+        E 0 90 40 7f
+        E 600 80 40 00
+        E 0 90 45 7f
+        E 960 80 45 00
+        E 0 90 45 7f
+        E 0 80 45 00
+        E 479 90 3c 7f
+        E 0 80 3c 00
+        E 1 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {A1BE1022-FAF7-466C-8462-237FE492EF62}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 30
+      >
+    >
+    <ITEM
+      POSITION 140.65597236249596
+      SNAPOFFS 0
+      LENGTH 12
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {4ED8F6EA-A010-4127-A5BE-DF46A0F6316B}
+      IID 11
+      NAME randomSimplePentatonic1.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {DDD16CFB-8594-4815-9EDF-7E22B86CC5FC}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {FFDF869A-2CC6-495F-99CE-7B805FC29EC3}
+        <X 0 0
+          /wM=
+        >
+        <X 0 0
+          /wM=
+        >
+        E 0 c0 00 00
+        E 0 90 45 7f
+        E 120 80 45 00
+        E 0 90 47 7f
+        E 720 80 47 00
+        E 0 90 47 7f
+        E 840 80 47 00
+        E 0 90 47 7f
+        E 360 80 47 00
+        E 0 90 40 7f
+        E 240 80 40 00
+        E 0 90 43 7f
+        E 120 80 43 00
+        E 0 90 47 7f
+        E 840 80 47 00
+        E 0 90 40 7f
+        E 0 80 40 00
+        E 0 90 40 7f
+        E 720 80 40 00
+        E 0 90 47 7f
+        E 480 80 47 00
+        E 0 90 43 7f
+        E 720 80 43 00
+        E 0 90 43 7f
+        E 240 80 43 00
+        E 0 90 40 7f
+        E 0 80 40 00
+        E 0 90 40 7f
+        E 600 80 40 00
+        E 0 90 43 7f
+        E 120 80 43 00
+        E 0 90 40 7f
+        E 360 80 40 00
+        E 0 90 45 7f
+        E 120 80 45 00
+        E 0 90 43 7f
+        E 120 80 43 00
+        E 0 90 43 7f
+        E 240 80 43 00
+        E 0 90 47 7f
+        E 600 80 47 00
+        E 0 90 43 7f
+        E 240 80 43 00
+        E 0 90 47 7f
+        E 480 80 47 00
+        E 0 90 40 7f
+        E 360 80 40 00
+        E 0 90 43 7f
+        E 840 80 43 00
+        E 0 90 45 7f
+        E 720 80 45 00
+        E 0 90 40 7f
+        E 0 80 40 00
+        E 0 90 45 7f
+        E 240 80 45 00
+        E 0 90 45 7f
+        E 240 80 45 00
+        E 0 90 45 7f
+        E 0 80 45 00
+        E 0 90 43 7f
+        E 839 80 43 00
+        E 1 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {6F2E497F-C773-4F3C-9962-C343556842F1}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 33
+      >
+    >
+    <ITEM
+      POSITION 154.58593574470339
+      SNAPOFFS 0
+      LENGTH 15.5
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 1
+      IGUID {CBF44220-360B-41FC-BF55-AE60EA9301AA}
+      IID 13
+      NAME randomSimplePentatonic2.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {E1AD1E3D-6FB2-4B3C-9780-C53D0149756A}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {07DACD52-741C-44FD-B952-D326753D4F8E}
+        <X 0 0
+          /wM=
+        >
+        <X 0 0
+          /wM=
+        >
+        E 0 c0 00 00
+        E 0 90 4f 7f
+        E 120 80 4f 00
+        E 0 90 43 7f
+        E 120 80 43 00
+        E 0 90 47 7f
+        E 360 80 47 00
+        E 0 90 43 7f
+        E 480 80 43 00
+        E 480 90 3c 7f
+        E 0 80 3c 00
+        E 480 90 4a 7f
+        E 0 80 4a 00
+        E 0 90 4f 7f
+        E 240 80 4f 00
+        E 0 90 40 7f
+        E 720 80 40 00
+        E 0 90 4a 7f
+        E 600 80 4a 00
+        E 0 90 40 7f
+        E 600 80 40 00
+        E 0 90 43 7f
+        E 720 80 43 00
+        E 0 90 45 7f
+        E 840 80 45 00
+        E 0 90 4f 7f
+        E 240 80 4f 00
+        E 480 90 3c 7f
+        E 0 80 3c 00
+        E 480 90 4a 7f
+        E 600 80 4a 00
+        E 0 90 45 7f
+        E 600 80 45 00
+        E 0 90 4f 7f
+        E 600 80 4f 00
+        E 0 90 4a 7f
+        E 360 80 4a 00
+        E 0 90 53 7f
+        E 600 80 53 00
+        E 0 90 4a 7f
+        E 840 80 4a 00
+        E 0 90 45 7f
+        E 360 80 45 00
+        E 0 90 40 7f
+        E 360 80 40 00
+        E 0 90 4c 7f
+        E 120 80 4c 00
+        E 0 90 47 7f
+        E 240 80 47 00
+        E 0 90 51 7f
+        E 240 80 51 00
+        E 0 90 51 7f
+        E 720 80 51 00
+        E 0 90 53 7f
+        E 720 80 53 00
+        E 0 90 40 7f
+        E 600 80 40 00
+        E 0 90 40 7f
+        E 240 80 40 00
+        E 0 90 43 7f
+        E 600 80 43 00
+        E 120 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {17B0929E-15BA-4451-B4CE-A5208B615D6A}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 39
       >
     >
   >
