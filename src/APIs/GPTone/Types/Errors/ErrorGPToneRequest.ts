@@ -1,4 +1,4 @@
-class ErrorGPToneRequest extends Error {
+export class ErrorGPToneRequest extends Error {
   constructor(message: string) {
     super(message)
     this.name = 'ErrorGPToneRequest'

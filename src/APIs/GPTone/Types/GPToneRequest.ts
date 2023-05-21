@@ -1,4 +1,5 @@
 
+import { ErrorGPToneRequest } from './Errors/ErrorGPToneRequest'
 export class GPToneRequest {
   prompt: string
   isNewConversation?: boolean

@@ -1,6 +1,7 @@
 //Ici on crée une classe qui permet de se connecter à l'API GPTone en envoyant une requête HTTP
 
 import { GPToneRequest } from './Types/GPToneRequest'
+import fetch from 'node-fetch'
 
 //On utilise la librairie Axios pour envoyer la requête HTTP
 export class GPToneConnector {
@@ -21,7 +22,14 @@ export class GPToneConnector {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(GPToneRequest),
+      body: JSON.stringify({
+        prompt,
+        pseudo,
+        randomness,
+        richness,
+        aiPersonality,
+        isNewConversation,
+      }),
     })
     const json = await response.json()
     return json
