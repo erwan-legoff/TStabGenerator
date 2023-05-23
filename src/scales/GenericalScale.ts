@@ -26,7 +26,7 @@ export class GenericalScale {
     numberOfNotes: number = this.intervals.length + 1 // +1 to include the root at the second octave
   ): Array<NoteOne> {
     const notes = []
-    
+
     for (let i = 0; i < numberOfNotes; i++) {
       const intervalsCount = this.intervals.length
       const octave = Math.floor(i / intervalsCount)
@@ -37,5 +37,9 @@ export class GenericalScale {
       notes.push(new NoteOne(midiNumber))
     }
     return notes
+  }
+
+  getName(): string {
+    return this.name
   }
 }

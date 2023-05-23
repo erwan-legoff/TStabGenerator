@@ -2,6 +2,7 @@
 
 import { GPToneRequest } from './Types/GPToneRequest'
 import axios from 'axios'
+import { GPToneResponse } from './Types/GPToneResponse'
 
 //On utilise la librairie Axios pour envoyer la requête HTTP
 export class GPToneConnector {
@@ -16,7 +17,8 @@ export class GPToneConnector {
     richness,
     aiPersonality,
     isNewConversation,
-  }: GPToneRequest) {
+    conversationId,
+  }: GPToneRequest): Promise<GPToneResponse> {
     const response = await axios.post(
       this.apiURL + '/generate',
       {
@@ -26,6 +28,7 @@ export class GPToneConnector {
         richness,
         aiPersonality,
         isNewConversation,
+        conversationId,
       },
       {
         headers: {
