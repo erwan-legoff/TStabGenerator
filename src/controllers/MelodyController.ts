@@ -11,7 +11,7 @@ export async function apiGetMelody(req: Request, res: Response) {
     const richness = 0.5
     const aiPersonality = SystemEnum.COMPOSITOR_V1
 
-    const GPT_ONE_URL = process.env.GPT_ONE_URL || 'http://localhost:5000'
+    const GPT_ONE_URL = process.env.GPT_ONE_URL || 'http://localhost:3000'
 
     const isNewConversation = true
 
