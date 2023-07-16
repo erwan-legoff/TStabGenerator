@@ -10,5 +10,5 @@ export interface CompositorInterface {
     scale?: GenericalScale,
     key?: NoteOne,
     styleOptions?: StyleOptions
-  ): TrackOne
+  ): Promise<TrackOne>
 }

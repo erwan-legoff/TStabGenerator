@@ -13,7 +13,7 @@ export class SimpleDownArpegeCompositor implements CompositorInterface {
     tempo: number = 120,
     scale: GenericalScale = new ChromaticScale(),
     key: NoteOne = NoteOne.noteNameToNote('C4')
-  ): TrackOne {
+  ): Promise<TrackOne> {
     const playedNotes: PlayedNote[] = []
     const scaleNotes = scale.getNotes(key, notesCount) // If notesCount is not defined, it will return one octave.
     let timeSpent = 0
@@ -24,6 +24,6 @@ export class SimpleDownArpegeCompositor implements CompositorInterface {
       playedNotes.push(new PlayedNote(note, time, duration))
     }
 
-    return new TrackOne(playedNotes, tempo)
+    return Promise.resolve(new TrackOne(playedNotes, tempo))
   }
 }
