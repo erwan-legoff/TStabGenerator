@@ -8,6 +8,7 @@ export async function apiGetOneNote(req: Request, res: Response) {
     const scale: GenericalScale = new PentatonicScale()
     const oneNoteGPToneAdaptor = new OneNoteGPToneAdaptor()
     const note = await oneNoteGPToneAdaptor.getOneNote(scale)
+    
     res.status(200).send(note)
   } catch (error) {
     console.error(error)

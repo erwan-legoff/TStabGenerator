@@ -12,8 +12,8 @@ export class OneNoteGPToneAdaptor implements IOneNoteAdaptor {
     try {
       const prompt = PromptEnum.ROCK_V0
       const pseudo = 'Pseudo'
-      const randomness = 0.5
-      const richness = 0.5
+      const randomness = 0.2
+      const richness = 1.5
       //const aiPersonality = SystemEnum.COMPOSITOR_V1
       const aiPersonalityStart = SystemEnum.COMPOSITOR_V0_0
       const aiPersonalityMiddle = SystemEnum.COMPOSITOR_V0_1
@@ -23,16 +23,11 @@ export class OneNoteGPToneAdaptor implements IOneNoteAdaptor {
       const SCALE_NOTES = scale.getNotes(ROOT)
       const SCALE_NOTES_NAMES = SCALE_NOTES.map((note) => note.getName())
       const SCALE_NOTES_NAMES_STRING = SCALE_NOTES_NAMES.join('-')
-      const aiPersonalityLimit = `${aiPersonalityMiddle} 0 and ${
+      const aiPersonalityLimit = `${aiPersonalityMiddle} ${
         SCALE_NOTES.length - 1
       }`
-      const aiPersonality = `${aiPersonalityStart} ${SCALE_NAME} : ${SCALE_NOTES_NAMES_STRING} ${aiPersonalityLimit} ${aiPersonalityEnd}`
+      const aiPersonality = `${aiPersonalityStart}\n the scale : ${SCALE_NAME} : \n The notes to choose from : \n ${SCALE_NOTES_NAMES_STRING} ${aiPersonalityLimit} ${aiPersonalityEnd}`
 
-      console.log('aiPersonality', aiPersonality)
-      console.log('SCALE_NOTES_NAMES_STRING', SCALE_NOTES_NAMES_STRING)
-      console.log('SCALE_NOTES_NAMES', SCALE_NOTES_NAMES)
-      console.log('SCALE_NOTES', SCALE_NOTES)
-      console.log('PROMPT', prompt)
       const GPT_ONE_URL = process.env.GPT_ONE_URL || 'http://localhost:3000'
 
       const isNewConversation = true
