@@ -1,11 +1,11 @@
-import NoteOne from '../notes/NoteOne'
-import PlayedNote from '../notes/playedNote/PlayedNoteOne'
-import { TrackOne } from '../notes/TrackOne'
-import { ChromaticScale } from '../scales/Scales'
-import { GenericalScale } from '../scales/GenericalScale'
-import { CompositorInterface } from './CompositorInterface'
-import { OneNoteMemoryGPToneAdaptor } from '../APIs/GPTone/Adaptors/OneNoteMemoryGPToneAdaptor'
+import NoteOne from '../notes/noteOnes/NoteOne'
 import { IOneNoteAdaptor } from '../APIs/GPTone/Adaptors/IOneNoteAdaptor'
+import { OneNoteMemoryGPToneAdaptor } from '../APIs/GPTone/Adaptors/OneNoteMemoryGPToneAdaptor'
+import { TrackOne } from '../notes/TrackOne'
+import PlayedNote from '../notes/playedNote/playedNoteOnes/PlayedNoteOne'
+import { GenericalScale } from '../scales/GenericalScale'
+import { ChromaticScale } from '../scales/Scales'
+import { CompositorInterface } from './CompositorInterface'
 /**
  * It's used to compose with GPT one note at a time
  */

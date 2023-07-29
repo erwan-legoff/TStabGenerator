@@ -1,7 +1,7 @@
-import { NoteOneInterface } from "../NoteOneInterface"
+import { NoteInterface } from '../NoteInterface'
 
 export interface PlayedNoteOneInterface {
-  getNote(): NoteOneInterface
+  getNote(): NoteInterface
   getTimeBeforeStart(): number
   getDuration(): number
   addTimeBeforeStart(timeBeforeStart: number): void

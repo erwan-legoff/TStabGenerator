@@ -1,6 +1,6 @@
-import NoteOne from "../../notes/NoteOne";
-import TabNote from "../../tabs/TabNote";
-import TabLine from "../TabLine";
+import NoteOne from '../../notes/noteOnes/NoteOne'
+import TabNote from '../../tabs/TabNote'
+import TabLine from '../TabLine'
 
 export interface ChooseTabLineStrategy {
   /**

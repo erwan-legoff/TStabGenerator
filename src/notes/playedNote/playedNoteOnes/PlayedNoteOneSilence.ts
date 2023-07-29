@@ -1,5 +1,5 @@
-import { NoteOneSilence } from '../NoteOneSilence'
-import { PlayedNoteOneInterface } from './PlayedNoteOneInterface'
+import { NoteOneSilence } from '../../noteOnes/NoteOneSilence'
+import { PlayedNoteOneInterface } from '../PlayedNoteInterface'
 
 export class PlayedNoteOneSilence implements PlayedNoteOneInterface {
   duration: number

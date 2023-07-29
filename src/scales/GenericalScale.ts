@@ -1,4 +1,4 @@
-import NoteOne from '../notes/NoteOne'
+import NoteOne from '../notes/noteOnes/NoteOne'
 
 export class GenericalScale {
   protected intervals: Array<number>

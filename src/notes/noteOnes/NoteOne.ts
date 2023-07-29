@@ -1,8 +1,8 @@
-import NoteNameEng from '../enums/NoteNameEng'
-import noteEngEnums from '../enums/NoteNumberEng'
-import { NoteOneInterface } from './NoteOneInterface'
+import NoteNameEng from '../../enums/NoteNameEng'
+import noteEngEnums from '../../enums/NoteNumberEng'
+import { NoteInterface } from '../NoteInterface'
 
-export default class NoteOne implements NoteOneInterface {
+export default class NoteOne implements NoteInterface {
   private name: string
   private midi: number
 
@@ -19,6 +19,21 @@ export default class NoteOne implements NoteOneInterface {
 
   public static noteNameToNote(name: string): NoteOne {
     return new NoteOne(NoteOne.noteNameToMidiNumber(name))
+  }
+
+  static noteNameToMidiNumber(name: string): number {
+    let octave = -1
+
+    const noteLetter = NoteOne.extractNoteLetter(name)
+    const octaveMatch = name.match(/\d+/)
+    if (octaveMatch) octave = parseInt(octaveMatch[0])
+    else throw new Error('No octave found in the note name : ' + name)
+
+    if (octave < 0) throw new Error('The note name is invalid : ' + name)
+
+    return (
+      NoteOne.noteLetterToNotePrimitiveNumber(noteLetter) + 12 * (octave + 1)
+    )
   }
 
   /**
@@ -38,7 +53,8 @@ export default class NoteOne implements NoteOneInterface {
         noteName = noteName.concat('S')
       }
 
-      const notePrimitiveNumber = noteEngEnums[noteName as keyof typeof noteEngEnums]
+      const notePrimitiveNumber =
+        noteEngEnums[noteName as keyof typeof noteEngEnums]
       if (notePrimitiveNumber == undefined || notePrimitiveNumber == null) {
         throw new Error(
           `The note ${name} is not defined in the enum NoteNumberEng ! RESULT: ${notePrimitiveNumber}`
@@ -52,18 +68,6 @@ export default class NoteOne implements NoteOneInterface {
     }
   }
 
-  static noteNameToMidiNumber(name: string): number {
-    let octave = -1
-
-    const noteLetter = NoteOne.extractNoteLetter(name)
-    const octaveMatch = name.match(/\d+/)
-    if (octaveMatch) octave = parseInt(octaveMatch[0])
-    else throw new Error('No octave found in the note name : ' + name)
-
-    if (octave < 0) throw new Error('The note name is invalid : ' + name)
-
-    return NoteOne.noteLetterToNotePrimitiveNumber(noteLetter) + 12 * (octave + 1)
-  }
   /**
    ** A function to get the note letter from a note name in string, it should also retain the sharp
    * @param name the note name in string (eg. 'C', 'Ds'), it should not contain a note number (eg. 'C4')
@@ -113,5 +117,4 @@ export default class NoteOne implements NoteOneInterface {
   getPrimitiveNumber(): number {
     return this.midi % 12
   }
-
 }

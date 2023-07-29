@@ -1,7 +1,7 @@
 import { FretBoardGuitar } from '../instruments/fretBoards/FretBoardGuitar'
 import { Guitar } from '../instruments/Guitar'
 import { NoteOneInterface } from '../notes/NoteOneInterface'
-import { PlayedNoteOneInterface } from '../notes/playedNote/PlayedNoteOneInterface'
+import { PlayedNoteOneInterface } from '../notes/playedNote/PlayedNoteInterface'
 import { TrackOne } from '../notes/TrackOne'
 import { ChooseTabLineStrategy } from '../tabLines/chooseTabLineStrategy/ChooseTabLineStrategy'
 import { ChooseTabLineStrategySimple } from '../tabLines/chooseTabLineStrategy/ChooseTabLineStrategySimple'

@@ -2,7 +2,7 @@ import { Midi } from '@tonejs/midi'
 import * as fs from 'fs'
 import { RandomSimpleCompositor } from './compositor/RandomSimpleCompositor'
 import { SimpleDownArpegeCompositor } from './compositor/SimpleDownArpegeCompositor'
-import NoteOne from './notes/NoteOne'
+import NoteOne from './notes/noteOnes/NoteOne'
 import {
   PentatonicScale,
   AlgerianScale,

@@ -1,9 +1,9 @@
-import { NoteOneInterface } from 'notes/NoteOneInterface'
-import NoteOne from '../../notes/NoteOne'
+import NoteOne from '../../notes/noteOnes/NoteOne'
+import { NoteInterface } from '../../notes/NoteInterface'
 
 export interface ChooseFretNumberStrategy {
   chooseFretNumber(
-    note: NoteOneInterface,
+    note: NoteInterface,
     rootNote: NoteOne,
     maxCaseNumber: number
   ): number

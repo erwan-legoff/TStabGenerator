@@ -1,12 +1,14 @@
-import NoteOne from '../NoteOne'
-import { PlayedNoteOneInterface } from './PlayedNoteOneInterface'
+import NoteOne from '../../noteOnes/NoteOne'
+import { PlayedNoteOneInterface } from '../PlayedNoteInterface';
 
-export default class PlayedNote implements PlayedNoteOneInterface{
+
+
+export default class PlayedNote implements PlayedNoteOneInterface {
   private note: NoteOne
   private timeBeforeStart: number
   private duration: number
   /**
-   * 
+   *
    * @param note the note to play
    * @param timeBeforeStartRelativeToBeat in percentage of the beat (1 = 100%)
    * @param durationRelativeToBeat in percentage of the beat (1 = 100%)
@@ -58,5 +60,4 @@ export default class PlayedNote implements PlayedNoteOneInterface{
   getNote(): NoteOne {
     return this.note
   }
-
 }

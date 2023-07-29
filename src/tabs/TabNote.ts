@@ -1,6 +1,6 @@
-import NoteOne from '../notes/NoteOne'
+import NoteOne from '../notes/noteOnes/NoteOne'
 import PlayedNote from '../notes/playedNote/PlayedNoteOne'
-import { PlayedNoteOneInterface } from '../notes/playedNote/PlayedNoteOneInterface'
+import { PlayedNoteOneInterface } from '../notes/playedNote/PlayedNoteInterface'
 import { ChooseFretNumberStrategy } from './ChooseFretNumberStrategy/ChooseFretNumberStrategy'
 import { TabNoteInterface } from './TabNoteInterface'
 

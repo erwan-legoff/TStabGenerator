@@ -1,4 +1,4 @@
-import NoteOne from '../../notes/NoteOne'
+import NoteOne from '../../notes/noteOnes/NoteOne'
 import { ChooseFretNumberStrategy } from './ChooseFretNumberStrategy'
 
 export class ChooseFretNumberStrategySimple

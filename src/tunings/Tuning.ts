@@ -1,4 +1,4 @@
-import NoteOne from "../notes/NoteOne";
+import NoteOne from '../notes/noteOnes/NoteOne'
 
 export interface Tuning {
   getNotes(): NoteOne[]

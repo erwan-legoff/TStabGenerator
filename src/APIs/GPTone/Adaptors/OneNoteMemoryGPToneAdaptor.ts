@@ -1,5 +1,5 @@
 import { log } from 'console'
-import NoteOne from '../../../notes/NoteOne'
+import NoteOne from '../../../notes/noteOnes/NoteOne'
 import { GenericalScale } from '../../../scales/GenericalScale'
 import { GPToneConnector } from '../GPToneConnector'
 import PromptEnum from '../Types/Enums/PromptEnum'

@@ -1,5 +1,5 @@
-import NoteOne from 'notes/NoteOne'
-import { PlayedNoteOneInterface } from 'notes/playedNote/PlayedNoteOneInterface'
+import NoteOne from 'notes/noteOnes/NoteOne'
+import { PlayedNoteOneInterface } from 'notes/playedNote/PlayedNoteInterface'
 import { GenericalScale } from 'scales/GenericalScale'
 
 export interface IOneNoteAdaptor {

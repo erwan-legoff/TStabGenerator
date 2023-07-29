@@ -1,5 +1,4 @@
-
-import NoteOne from '../notes/NoteOne'
+import NoteOne from '../notes/noteOnes/NoteOne'
 import { GuitarTuning } from './GuitarTuning'
 
 export class StandardGuitarTuning implements GuitarTuning {
@@ -10,7 +9,7 @@ export class StandardGuitarTuning implements GuitarTuning {
       NoteOne.noteNameToNote('D3'),
       NoteOne.noteNameToNote('G3'),
       NoteOne.noteNameToNote('B3'),
-      NoteOne.noteNameToNote('E4')
+      NoteOne.noteNameToNote('E4'),
     ]
   }
 

@@ -1,4 +1,4 @@
-import NoteOne from '../notes/NoteOne'
+import NoteOne from '../notes/noteOnes/NoteOne'
 
 export function getPositiveInterval(root: NoteOne, note: NoteOne): number {
   const primitiveRoot = root.getPrimitiveNumber()
