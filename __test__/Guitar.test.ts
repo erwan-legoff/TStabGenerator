@@ -1,5 +1,5 @@
 import { Guitar } from "../src/instruments/Guitar"
-import NoteOne from "../src/notes/NoteOne"
+import NoteOne from "../src/notes/noteOnes/NoteOne"
 import { StandardGuitarTuning } from "../src/tunings/StandardGuitarTuning"
 
 describe("Guitar", () => {

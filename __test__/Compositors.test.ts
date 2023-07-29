@@ -1,14 +1,14 @@
 import { RandomSimpleCompositor } from '../src/compositor/RandomSimpleCompositor'
 import { SimpleDownArpegeCompositor } from '../src/compositor/SimpleDownArpegeCompositor'
-import NoteOne from '../src/notes/NoteOne'
+import NoteOne from '../src/notes/noteOnes/NoteOne'
 import { TrackOne } from '../src/notes/TrackOne'
 import { ChromaticScale } from '../src/scales/Scales'
 
-describe('Simple Down Arpege Compositor', () => {
+describe('Simple Down Arpege Compositor', async () => {
   const compositor = new SimpleDownArpegeCompositor()
   const scale = new ChromaticScale()
   const key = NoteOne.noteNameToNote('C4')
-  const music = compositor.getMusic(12, 120, scale, key)
+  const music = await compositor.getMusic(12, 120, scale, key)
   it('should return a TrackOne', () => {
     expect(music).toBeInstanceOf(TrackOne)
   })
@@ -37,9 +37,9 @@ describe('Simple Down Arpege Compositor', () => {
     }
   })
 
-  it('should return notes that can go higher than an octave', () => {
+  it('should return notes that can go higher than an octave', async () => {
     const notesCount = 24
-    const music = compositor.getMusic(notesCount)
+    const music = await compositor.getMusic(notesCount)
     const D4 = NoteOne.noteNameToNote('D4')
     const C5 = NoteOne.noteNameToNote('C5')
     const playedNotes = music.getPlayedNotes()
@@ -51,15 +51,15 @@ describe('Simple Down Arpege Compositor', () => {
   })
 })
 
-describe('Simple Random Compositor', () => {
+describe('Simple Random Compositor', async () => {
   const compositor = new RandomSimpleCompositor()
   const scale = new ChromaticScale()
   const key = NoteOne.noteNameToNote('C4')
-  const music = compositor.getMusic(12, 120, scale, key)
+  const music = await compositor.getMusic(12, 120, scale, key)
   it('should return a TrackOne', () => {
     expect(music).toBeInstanceOf(TrackOne)
   })
-  it('should return a TrackOne with 12 notes', () => {
-    expect(music.getPlayedNotes().length).toBe(12)
+  it('should return a TrackOne with 12 notes', async () => {
+    expect(await music.getPlayedNotes().length).toBe(12)
   })
 })

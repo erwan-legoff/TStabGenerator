@@ -1,4 +1,4 @@
-import NoteOne from '../src/notes/NoteOne'
+import NoteOne from '../src/notes/noteOnes/NoteOne'
 import { ChromaticScale, PentatonicScale } from '../src/scales/Scales'
 
 describe('chromatic scale', () => {

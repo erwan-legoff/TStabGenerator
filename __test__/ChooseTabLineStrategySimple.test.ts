@@ -1,4 +1,4 @@
-import NoteOne from '../src/notes/NoteOne'
+import NoteOne from '../src/notes/noteOnes/NoteOne'
 import { ChooseTabLineStrategySimple } from '../src/tabLines/chooseTabLineStrategy/ChooseTabLineStrategySimple'
 import { TabLineGuitar } from '../src/tabLines/TabLineGuitar'
 

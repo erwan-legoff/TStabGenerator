@@ -1,4 +1,4 @@
-import NoteOne from '../src/notes/NoteOne'
+import NoteOne from '../src/notes/noteOnes/NoteOne'
 
 describe('Notes from number', () => {
   const noteB3 = new NoteOne(59)
