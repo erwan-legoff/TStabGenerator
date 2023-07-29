@@ -7,7 +7,7 @@ import { CompositorInterface } from './CompositorInterface'
 import { OneNoteMemoryGPToneAdaptor } from '../APIs/GPTone/Adaptors/OneNoteMemoryGPToneAdaptor'
 import { IOneNoteAdaptor } from '../APIs/GPTone/Adaptors/IOneNoteAdaptor'
 /**
- * This class is used to do a simple arpege from the root note of the scale to the last note of the scale, given the number of notes to be played.
+ * It's used to compose with GPT one note at a time
  */
 export class GPTCompositorOneNote implements CompositorInterface {
   async getMusic(

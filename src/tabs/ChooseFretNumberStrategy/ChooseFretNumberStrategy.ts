@@ -1,3 +1,4 @@
+import { NoteOneInterface } from 'notes/NoteOneInterface'
 import NoteOne from '../../notes/NoteOne'
 
 export interface ChooseFretNumberStrategy {
