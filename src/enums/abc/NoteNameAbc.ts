@@ -10,18 +10,17 @@ export enum NoteNameAbc {
 }
 
 export enum NoteNameAbcFull {
-  A = 'A', 
-  As= "A'",
-  B = 'B',
   C = 'C',
-  Cs= "C'",
+  Cs = '^C',
   D = 'D',
-  Ds = "D'",
+  Ds = '^D',
   E = 'E',
   F = 'F',
-  Fs = "F'",
+  Fs = '^F',
   G = 'G',
-  Gs = "G'",
+  Gs = '^G',
+  A = 'A',
+  As = '^A',
+  B = 'B',
   SILENCE = 'z',
 }
-
