@@ -1,18 +1,15 @@
+import { checkMidiNumber } from '../../utils/checkMidiNumber'
 import NoteNameEng from '../../enums/NoteNameEng'
 import noteEngEnums from '../../enums/NoteNumberEng'
 import { NoteInterface } from '../NoteInterface'
+import { getOctaveFromMidi } from '../../utils/getOctaveFromMidi'
 
 export default class NoteOne implements NoteInterface {
   private name: string
   private midi: number
 
   constructor(midiNumber: number) {
-    if (midiNumber < 0)
-      throw new Error('The midi number can not be negative : ' + midiNumber)
-    if (midiNumber > 127)
-      throw new Error(
-        'The midi number can not be greater than 127 : ' + midiNumber
-      )
+    checkMidiNumber(midiNumber)
     this.midi = midiNumber
     this.name = NoteOne.midiToNoteName(midiNumber)
   }
@@ -87,14 +84,9 @@ export default class NoteOne implements NoteInterface {
   }
 
   public static midiToNoteName(midiNumber: number): string {
-    if (midiNumber < 0)
-      throw new Error('The midi number can not be negative : ' + midiNumber)
-    if (midiNumber > 127)
-      throw new Error(
-        'The midi number can not be greater than 127 : ' + midiNumber
-      )
+    checkMidiNumber(midiNumber)
     const noteNumber = midiNumber % 12
-    const octave = Math.floor(midiNumber / 12) - 1
+    const octave = getOctaveFromMidi(midiNumber)
     const noteLetter =
       NoteNameEng[noteEngEnums[noteNumber] as keyof typeof noteEngEnums]
 
