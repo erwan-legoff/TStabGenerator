@@ -174,7 +174,7 @@ export default class NoteAbc implements NoteInterface {
     if (name === noteLetter.toUpperCase()) return octaveCount
     if (noteLetter === noteLetter.toLowerCase()) octaveCount++
 
-    const octaveIndicator: string = name.replace(noteLetter, '')
+    const octaveIndicator: string = name.replace(noteLetter, '').replaceAll(OperatorAbc.SHARP, '').replaceAll(OperatorAbc.FLAT, '')
     const octaveIndicators: string[] = octaveIndicator.split('')
 
     while (octaveIndicators.length > 0) {

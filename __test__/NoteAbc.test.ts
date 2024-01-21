@@ -5,8 +5,11 @@ import { NoteNameAbcFull } from '../src/enums/abc/NoteNameAbc'
 describe('Notes from number', () => {
   const noteB3 = new NoteAbc(59, 4)
   const noteC4 = new NoteAbc(60, 4)
+  const noteC4s = new NoteAbc(61, 4)
   const noteC5 = new NoteAbc(72, 4)
+  const noteC5s = new NoteAbc(73, 4)
   const noteC6 = new NoteAbc(84, 4)
+  const noteC6s = new NoteAbc(85, 4)
   const noteC7 = new NoteAbc(96, 4)
   const noteC7bis = new NoteAbc(96)
 
@@ -16,39 +19,20 @@ describe('Notes from number', () => {
   it('the 60 midiNumber should return a C note', () => {
     expect(noteC4.getName()).toBe('C')
   })
-  it('the 72 midiNumber should return a c note', () => {
-    expect(noteC5.getName()).toBe('c')
-  })
-  it("the 84 midiNumber should return a c' note", () => {
-    expect(noteC6.getName()).toBe("c'")
-  })
-  it("the 96 midiNumber should return a c'' note", () => {
-    expect(noteC7.getName()).toBe("c''")
-  })
-  it("the 96bis midiNumber should return a c'' note", () => {
-    expect(noteC7bis.getName()).toBe("c''")
-  })
-})
-
-describe('Notes from number', () => {
-  const noteB3 = new NoteAbc(59, 4)
-  const noteC4 = new NoteAbc(60, 4)
-  const noteC5 = new NoteAbc(72, 4)
-  const noteC6 = new NoteAbc(84, 4)
-  const noteC7 = new NoteAbc(96, 4)
-  const noteC7bis = new NoteAbc(96)
-
-  it('the 59 midiNumber should return a B, note', () => {
-    expect(noteB3.getName()).toBe('B,')
-  })
-  it('the 60 midiNumber should return a C note', () => {
-    expect(noteC4.getName()).toBe('C')
+  it('the 61 midiNumber should return a ^C note', () => {
+    expect(noteC4s.getName()).toBe('^C')
   })
   it('the 72 midiNumber should return a c note', () => {
     expect(noteC5.getName()).toBe('c')
   })
+  it('the 73 midiNumber should return a ^c note', () => {
+    expect(noteC5s.getName()).toBe('^c')
+  })
   it("the 84 midiNumber should return a c' note", () => {
     expect(noteC6.getName()).toBe("c'")
+  })
+  it("the 85 midiNumber should return a ^c' note", () => {
+    expect(noteC6s.getName()).toBe("^c'")
   })
   it("the 96 midiNumber should return a c'' note", () => {
     expect(noteC7.getName()).toBe("c''")
@@ -67,6 +51,13 @@ describe('Notes from name', () => {
   })
   it('the C note should return a midi number of 60', () => {
     expect(NoteAbc.convertNameToMidiNumber('C')).toBe(60)
+  })
+
+  it('the ^C note should return a midi number of 61', () => {
+    expect(NoteAbc.convertNameToMidiNumber('^C')).toBe(61)
+  })
+  it('the _C note should return a midi number of 59', () => {
+    expect(NoteAbc.convertNameToMidiNumber('_C')).toBe(59)
   })
   it('the c note should return a midi number of 72', () => {
     expect(NoteAbc.convertNameToMidiNumber('c')).toBe(72)
