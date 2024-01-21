@@ -1,5 +1,5 @@
 import NoteOne from '../notes/noteOnes/NoteOne'
-import PlayedNote from '../notes/playedNote/PlayedNoteOne'
+import PlayedNote from '../notes/playedNote/playedNoteOnes/PlayedNoteOne'
 import { PlayedNoteOneInterface } from '../notes/playedNote/PlayedNoteInterface'
 import { PlayedNoteOneSilence } from '../notes/playedNote/playedNoteOnes/PlayedNoteOneSilence'
 import { TrackOne } from '../notes/TrackOne'

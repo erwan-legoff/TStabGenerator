@@ -6,7 +6,8 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "build": "tsc",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,6 @@
   "dependencies": {
     "@tonejs/midi": "^2.0.27",
     "@types/body-parser": "^1.19.2",
-    "@types/express": "^4.17.17",
     "axios": "^1.4.0",
     "body-parser": "^1.20.2",
     "dotenv": "^16.0.3",
@@ -37,9 +37,10 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.21",
     "@types/jest": "^27.4.0",
+    "@types/morgan": "^1.9.9",
     "@types/node": "^17.0.45",
-    "@types/morgan": "^1.9.4",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",
     "babel-jest": "^27.5.1",

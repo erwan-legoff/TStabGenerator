@@ -1,7 +1,6 @@
 import { NoteInterface } from '../NoteInterface'
 import { NoteNameAbcFull } from '../../enums/abc/NoteNameAbc'
-import { checkMidiNumber } from '../../utils/checkMidiNumber'
-import { getOctaveFromMidi } from '../../utils/getOctaveFromMidi'
+import { MidiUtils } from '../../utils/MidiUtils'
 import OperatorAbc from '../../enums/abc/OperatorAbc'
 
 export default class NoteAbc implements NoteInterface {
@@ -10,7 +9,7 @@ export default class NoteAbc implements NoteInterface {
   private defaultOctave: number
 
   constructor(midi: number, defaultOctave?: number) {
-    checkMidiNumber(midi)
+    MidiUtils.checkMidiNumber(midi)
 
     this.midi = midi
 
@@ -19,11 +18,11 @@ export default class NoteAbc implements NoteInterface {
     this.name = NoteAbc.convertMidiToName(midi, this.defaultOctave)
   }
   static convertMidiToName(midi: number, defaultOctave: number = 4): string {
-    checkMidiNumber(midi)
+    MidiUtils.checkMidiNumber(midi)
     const noteNames = NoteAbc.getNoteNames()
     const noteIndex = midi % 12
     const noteLetter = noteNames[noteIndex]
-    const octave = getOctaveFromMidi(midi)
+    const octave = MidiUtils.getOctaveFromMidi(midi)
     return NoteAbc.addOctaveToNoteName(noteLetter, octave, defaultOctave)
   }
 
@@ -36,45 +35,56 @@ export default class NoteAbc implements NoteInterface {
     if (octave < 0) throw new Error('The octave is negative')
 
     const octaveDifference = octave - defaultOctave
-    if (octaveDifference === 0) return noteLetter.toUpperCase()
-
+    if (octaveDifference == 0) return noteLetter.toUpperCase()
     if (octaveDifference > 0)
       return NoteAbc.addUpperOctaveToNoteName(noteLetter, octaveDifference)
 
-    if (octaveDifference < 0)
-      return NoteAbc.addLowerOctaveToNoteName(noteLetter, octaveDifference)
-
-    return noteLetter.toUpperCase()
+    return NoteAbc.addLowerOctaveToNoteName(noteLetter, octaveDifference)
   }
 
+  /**
+   * Adds the upper octave to the note name.
+   *
+   * @param noteLetter - The letter representing the note.
+   * @param octaveDifference - The difference in octaves.
+   * @returns The note name with the upper octave added.
+   */
   private static addUpperOctaveToNoteName(
     noteLetter: string,
     octaveDifference: number
   ) {
-    let noteName = noteLetter.toLowerCase()
-    const operator = OperatorAbc.UPPER_OCTAVE
-    noteName = NoteAbc.addStringMultipleTimes(
+    return NoteAbc.addStringMultipleTimes(
       octaveDifference - 1,
-      noteName,
-      operator
+      noteLetter.toLowerCase(),
+      OperatorAbc.UPPER_OCTAVE
     )
-    return noteName
   }
+  /**
+   * Adds a lower octave to the given note name.
+   *
+   * @param noteLetter - The letter representing the note.
+   * @param octaveDifference - The number of octaves to lower the note.
+   * @returns The modified note name with the lower octave added.
+   */
   static addLowerOctaveToNoteName(
     noteLetter: string,
     octaveDifference: number
   ): string {
-    let noteName = noteLetter.toUpperCase()
-    const operator = OperatorAbc.LOWER_OCTAVE
-    const octaveDifferenceAbs = Math.abs(octaveDifference)
-    noteName = NoteAbc.addStringMultipleTimes(
-      octaveDifferenceAbs,
-      noteName,
-      operator
+    return NoteAbc.addStringMultipleTimes(
+      Math.abs(octaveDifference),
+      noteLetter.toUpperCase(),
+      OperatorAbc.LOWER_OCTAVE
     )
-    return noteName
   }
 
+  /**
+   * Adds a string multiple times to another string.
+   *
+   * @param repetition The number of times to repeat the string.
+   * @param stringToModify The string to modify by adding the other string.
+   * @param stringToAdd The string to add multiple times.
+   * @returns The modified string.
+   */
   private static addStringMultipleTimes(
     repetition: number,
     stringToModify: string,
@@ -100,9 +110,12 @@ export default class NoteAbc implements NoteInterface {
 
     if (noteLetter.length === 0) throw new Error('The note name is not valid')
     if (noteLetter.length > 1)
-      throw new Error('The note name contains unallowed characters')
+      throw new Error(
+        'The note is longer than one, it may contain unallowed characters'
+      )
 
     const noteIndex = NoteAbc.getNoteNames().indexOf(noteLetter)
+
     if (noteIndex === -1) throw new Error('The note name is not valid')
 
     const midi = noteIndex + 12 * octave + sharpCount - flatCount
@@ -113,6 +126,12 @@ export default class NoteAbc implements NoteInterface {
     return midi
   }
 
+  /**
+   * Extracts the note letter from the given name by removing any octave indicators, flats, and sharps.
+   *
+   * @param name - The name of the note.
+   * @returns The extracted note letter.
+   */
   private static extractNoteLetter(name: string) {
     return name
       .replace(OperatorAbc.LOWER_OCTAVE, '')

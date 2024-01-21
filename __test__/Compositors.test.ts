@@ -4,11 +4,19 @@ import NoteOne from '../src/notes/noteOnes/NoteOne'
 import { TrackOne } from '../src/notes/TrackOne'
 import { ChromaticScale } from '../src/scales/Scales'
 
-describe('Simple Down Arpege Compositor', async () => {
-  const compositor = new SimpleDownArpegeCompositor()
-  const scale = new ChromaticScale()
-  const key = NoteOne.noteNameToNote('C4')
-  const music = await compositor.getMusic(12, 120, scale, key)
+describe('Simple Down Arpege Compositor', () => {
+  let compositor
+  let scale
+  let key
+  let music
+
+  // Setup asynchronous operations before the tests
+  beforeAll(async () => {
+    compositor = new SimpleDownArpegeCompositor()
+    scale = new ChromaticScale()
+    key = NoteOne.noteNameToNote('C4')
+    music = await compositor.getMusic(12, 120, scale, key)
+  })
   it('should return a TrackOne', () => {
     expect(music).toBeInstanceOf(TrackOne)
   })
@@ -51,14 +59,24 @@ describe('Simple Down Arpege Compositor', async () => {
   })
 })
 
-describe('Simple Random Compositor', async () => {
-  const compositor = new RandomSimpleCompositor()
-  const scale = new ChromaticScale()
-  const key = NoteOne.noteNameToNote('C4')
-  const music = await compositor.getMusic(12, 120, scale, key)
+describe('Simple Random Compositor', () => {
+  let compositor: RandomSimpleCompositor
+  let scale: ChromaticScale
+  let key: NoteOne
+  let music: TrackOne
+
+  // Setup asynchronous operations before the tests
+  beforeAll(async () => {
+    compositor = new RandomSimpleCompositor()
+    scale = new ChromaticScale()
+    key = NoteOne.noteNameToNote('C4')
+    music = await compositor.getMusic(12, 120, scale, key)
+  })
+
   it('should return a TrackOne', () => {
     expect(music).toBeInstanceOf(TrackOne)
   })
+
   it('should return a TrackOne with 12 notes', async () => {
     expect(await music.getPlayedNotes().length).toBe(12)
   })

@@ -1,5 +1,5 @@
-import NoteOne from "../../src/notes/NoteOne"
-import { getPositiveInterval } from "../../src/utils/getPositiveInterval"
+import NoteOne from '../../src/notes/noteOnes/NoteOne'
+import { getPositiveInterval } from '../../src/utils/getPositiveInterval'
 
 describe('getPositiveInterval', () => {
   it('should return 2 if the root is 2 below ', () => {

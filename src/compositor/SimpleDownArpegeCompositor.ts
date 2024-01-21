@@ -1,5 +1,5 @@
 import NoteOne from '../notes/noteOnes/NoteOne'
-import PlayedNote from '../notes/playedNote/PlayedNoteOne'
+import PlayedNote from '../notes/playedNote/playedNoteOnes/PlayedNoteOne'
 import { TrackOne } from '../notes/TrackOne'
 import { ChromaticScale } from '../scales/Scales'
 import { GenericalScale } from '../scales/GenericalScale'

@@ -1,15 +1,14 @@
-import { checkMidiNumber } from '../../utils/checkMidiNumber'
+import { MidiUtils } from '../../utils/MidiUtils'
 import NoteNameEng from '../../enums/NoteNameEng'
 import noteEngEnums from '../../enums/NoteNumberEng'
 import { NoteInterface } from '../NoteInterface'
-import { getOctaveFromMidi } from '../../utils/getOctaveFromMidi'
 
 export default class NoteOne implements NoteInterface {
   private name: string
   private midi: number
 
   constructor(midiNumber: number) {
-    checkMidiNumber(midiNumber)
+    MidiUtils.checkMidiNumber(midiNumber)
     this.midi = midiNumber
     this.name = NoteOne.midiToNoteName(midiNumber)
   }
@@ -84,9 +83,9 @@ export default class NoteOne implements NoteInterface {
   }
 
   public static midiToNoteName(midiNumber: number): string {
-    checkMidiNumber(midiNumber)
+    MidiUtils.checkMidiNumber(midiNumber)
     const noteNumber = midiNumber % 12
-    const octave = getOctaveFromMidi(midiNumber)
+    const octave = MidiUtils.getOctaveFromMidi(midiNumber)
     const noteLetter =
       NoteNameEng[noteEngEnums[noteNumber] as keyof typeof noteEngEnums]
 

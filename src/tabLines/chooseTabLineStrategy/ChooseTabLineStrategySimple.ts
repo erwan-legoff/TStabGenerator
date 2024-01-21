@@ -1,5 +1,5 @@
-import { NoteOneInterface } from '../../notes/NoteOneInterface'
-import { NoteOneSilence } from '../../notes/NoteOneSilence'
+import { NoteInterface } from '../../notes/NoteInterface'
+import { NoteOneSilence } from '../../notes/noteOnes/NoteOneSilence'
 import TabLine from '../TabLine'
 import { ChooseTabLineStrategy } from './ChooseTabLineStrategy'
 
@@ -9,7 +9,7 @@ export class ChooseTabLineStrategySimple implements ChooseTabLineStrategy {
    * @param tabNote the tabNote you want to choose the tabLine for
    * @param tabLines the list of tabLines you want to choose from
    */
-  chooseTabLine(note: NoteOneInterface, tabLines: TabLine[]): number {
+  chooseTabLine(note: NoteInterface, tabLines: TabLine[]): number {
     //choose the right string number according to the note to play : the string root note should be lower than the note and also the closest note
     if (note instanceof NoteOneSilence) return -1
 
