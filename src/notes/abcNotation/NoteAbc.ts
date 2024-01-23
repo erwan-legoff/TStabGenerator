@@ -93,10 +93,7 @@ export default class NoteAbc implements NoteInterface {
     stringToModify: string,
     stringToAdd: string
   ) {
-    for (let i = 0; i < repetition; i++) {
-      stringToModify = stringToModify.concat(stringToAdd)
-    }
-    return stringToModify
+    return stringToModify.concat(stringToAdd.repeat(repetition))
   }
 
   public static convertNameToMidiNumber(
@@ -104,7 +101,7 @@ export default class NoteAbc implements NoteInterface {
     defaultOctave: number = 4
   ): number {
     if (name.length === 0) throw new Error('The name is empty')
-    if(defaultOctave < 0) throw new Error('The default octave is negative')
+    if (defaultOctave < 0) throw new Error('The default octave is negative')
     const OFFSET_MIDI_NUMBER = MidiUtils.MIDI_NUMBER_OCTAVE_ZERO
     const octave = NoteAbc.getOctave(defaultOctave, name)
     const flatCount = name.split(OperatorAbc.FLAT).length - 1
@@ -174,7 +171,7 @@ export default class NoteAbc implements NoteInterface {
     if (name === noteLetter.toUpperCase()) return octaveCount
     if (noteLetter === noteLetter.toLowerCase()) octaveCount++
 
-    const octaveIndicator: string = name.replace(noteLetter, '').replaceAll(OperatorAbc.SHARP, '').replaceAll(OperatorAbc.FLAT, '')
+    const octaveIndicator = NoteAbc.extractOctaveIndicator(name)
     const octaveIndicators: string[] = octaveIndicator.split('')
 
     while (octaveIndicators.length > 0) {
@@ -185,6 +182,18 @@ export default class NoteAbc implements NoteInterface {
     }
 
     return octaveCount
+  }
+
+  private static extractOctaveIndicator(name: string): string {
+    const nameAsArray = name.split('')
+    const octaveIndicators = nameAsArray
+      .filter((char) => {
+        return (
+          char === OperatorAbc.LOWER_OCTAVE || char === OperatorAbc.UPPER_OCTAVE
+        )
+      })
+      .join('')
+    return octaveIndicators
   }
 
   public static getNoteNamesFull(): string[] {
