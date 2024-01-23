@@ -1,7 +1,7 @@
 import NoteOne from '../notes/noteOnes/NoteOne'
 import { IOneNoteAdaptor } from '../APIs/GPTone/Adaptors/IOneNoteAdaptor'
 import { OneNoteMemoryGPToneAdaptor } from '../APIs/GPTone/Adaptors/OneNoteMemoryGPToneAdaptor'
-import { TrackOne } from '../notes/PlayedNoteMidi'
+import { TrackOne } from '../notes/playedNote/PlayedNoteMidi'
 import PlayedNote from '../notes/playedNote/playedNoteOnes/PlayedNoteOne'
 import { GenericalScale } from '../scales/GenericalScale'
 import { ChromaticScale } from '../scales/Scales'

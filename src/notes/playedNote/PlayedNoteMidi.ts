@@ -1,5 +1,5 @@
 import { Track, Midi } from '@tonejs/midi'
-import PlayedNote from './playedNote/playedNoteOnes/PlayedNoteOne'
+import PlayedNote from './playedNoteOnes/PlayedNoteOne'
 /**
  ** A class that can convert played notes into notes ready to go into a MidiTrack
  */
