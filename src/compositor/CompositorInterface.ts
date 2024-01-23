@@ -1,5 +1,5 @@
 import NoteOne from '../notes/noteOnes/NoteOne'
-import { TrackOne } from '../notes/TrackOne'
+import { TrackOne } from '../notes/PlayedNoteMidi'
 import { GenericalScale } from '../scales/GenericalScale'
 import { StyleOptions } from './StyleOptions'
 

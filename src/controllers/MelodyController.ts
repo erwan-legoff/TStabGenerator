@@ -3,7 +3,7 @@ import { GenericalScale } from '../scales/GenericalScale'
 import { PentatonicScale } from '../scales/Scales'
 import { OneNoteGPToneAdaptor } from '../APIs/GPTone/Adaptors/OneNoteGPToneAdaptor'
 import { GPTCompositorOneNote } from '../compositor/GPTCompositorOneNote'
-import { TrackOne } from 'notes/TrackOne'
+import { TrackOne } from 'notes/PlayedNoteMidi'
 
 export async function apiGetMelody(req: Request, res: Response) {
   try {
