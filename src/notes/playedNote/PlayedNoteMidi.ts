@@ -3,7 +3,7 @@ import PlayedNote from './playedNoteOnes/PlayedNoteOne'
 /**
  ** A class that can convert played notes into notes ready to go into a MidiTrack
  */
-export class TrackOne {
+export class PlayedNoteMidi {
   playedNotes: PlayedNote[] = []
   readonly beatLength: number = 1 // in seconds
   constructor(playedNotes: PlayedNote[], beatPerMinute: number = 120) {
@@ -17,6 +17,10 @@ export class TrackOne {
     this.playedNotes.push(playedNote)
   }
 
+  /**
+   * Retrieves the MIDI track for the played notes.
+   * @returns The MIDI track.
+   */
   getMidiTrack(): Track {
     let timeSpent: number = 0
     const midiFile = new Midi()

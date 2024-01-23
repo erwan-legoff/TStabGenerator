@@ -1,6 +1,6 @@
 import NoteOne from '../src/notes/noteOnes/NoteOne'
 import PlayedNote from '../src/notes/playedNote/playedNoteOnes/PlayedNoteOne'
-import { TrackOne } from '../src/notes/TrackOne'
+import { PlayedNoteMidi } from '../src/notes/playedNote/PlayedNoteMidi'
 import { TabGuitar } from '../src/tabs/TabGuitar'
 import { TabNoteSilence } from '../src/tabs/TabNoteSilence'
 
@@ -9,7 +9,7 @@ describe('TabGuitar Creation', () => {
     new PlayedNote(NoteOne.noteNameToNote('E2')),
     new PlayedNote(NoteOne.noteNameToNote('A2')),
   ]
-  const tabGuitar = new TabGuitar('Test', new TrackOne(playedNotes))
+  const tabGuitar = new TabGuitar('Test', new PlayedNoteMidi(playedNotes))
   it('should create a new TabGuitar', () => {
     expect(tabGuitar).toBeDefined()
   })

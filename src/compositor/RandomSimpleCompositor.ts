@@ -2,7 +2,7 @@ import NoteOne from '../notes/noteOnes/NoteOne'
 import PlayedNote from '../notes/playedNote/playedNoteOnes/PlayedNoteOne'
 import { PlayedNoteInterface } from '../notes/playedNote/PlayedNoteInterface'
 import { PlayedNoteOneSilence } from '../notes/playedNote/playedNoteOnes/PlayedNoteOneSilence'
-import { TrackOne } from '../notes/playedNote/PlayedNoteMidi'
+import { PlayedNoteMidi } from '../notes/playedNote/PlayedNoteMidi'
 import { GenericalScale } from '../scales/GenericalScale'
 import { PentatonicScale } from '../scales/Scales'
 import { CompositorInterface } from './CompositorInterface'
@@ -14,7 +14,7 @@ export class RandomSimpleCompositor implements CompositorInterface {
     tempo: number = 120,
     scale: GenericalScale = new PentatonicScale(),
     key: NoteOne = NoteOne.noteNameToNote('C4')
-  ): Promise<TrackOne> {
+  ): Promise<PlayedNoteMidi> {
     //! Refactor to use playedNoteOneInterface and silence
     const playedNotes: PlayedNote[] = []
     const notes: NoteOne[] = scale.getNotes(key, 10)
@@ -41,6 +41,6 @@ export class RandomSimpleCompositor implements CompositorInterface {
       }
     }
 
-    return Promise.resolve(new TrackOne(playedNotes, tempo))
+    return Promise.resolve(new PlayedNoteMidi(playedNotes, tempo))
   }
 }

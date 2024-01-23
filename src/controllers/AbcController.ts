@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { TrackOne } from 'notes/playedNote/PlayedNoteMidi'
+import { PlayedNoteMidi } from 'notes/playedNote/PlayedNoteMidi'
 import { GPTCompositorOneNote } from '../compositor/GPTCompositorOneNote'
 import { GenericalScale } from '../scales/GenericalScale'
 import { PentatonicScale } from '../scales/Scales'

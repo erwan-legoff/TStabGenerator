@@ -1,7 +1,7 @@
 import { RandomSimpleCompositor } from '../src/compositor/RandomSimpleCompositor'
 import { SimpleDownArpegeCompositor } from '../src/compositor/SimpleDownArpegeCompositor'
 import NoteOne from '../src/notes/noteOnes/NoteOne'
-import { TrackOne } from '../src/notes/TrackOne'
+import { PlayedNoteMidi } from '../src/notes/playedNote/PlayedNoteMidi'
 import { ChromaticScale } from '../src/scales/Scales'
 
 describe('Simple Down Arpege Compositor', () => {
@@ -18,7 +18,7 @@ describe('Simple Down Arpege Compositor', () => {
     music = await compositor.getMusic(12, 120, scale, key)
   })
   it('should return a TrackOne', () => {
-    expect(music).toBeInstanceOf(TrackOne)
+    expect(music).toBeInstanceOf(PlayedNoteMidi)
   })
   it('should return a TrackOne with 12 notes', () => {
     expect(music.getPlayedNotes().length).toBe(12)
@@ -63,7 +63,7 @@ describe('Simple Random Compositor', () => {
   let compositor: RandomSimpleCompositor
   let scale: ChromaticScale
   let key: NoteOne
-  let music: TrackOne
+  let music: PlayedNoteMidi
 
   // Setup asynchronous operations before the tests
   beforeAll(async () => {
@@ -74,7 +74,7 @@ describe('Simple Random Compositor', () => {
   })
 
   it('should return a TrackOne', () => {
-    expect(music).toBeInstanceOf(TrackOne)
+    expect(music).toBeInstanceOf(PlayedNoteMidi)
   })
 
   it('should return a TrackOne with 12 notes', async () => {

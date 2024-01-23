@@ -1,5 +1,5 @@
 import PlayedNote from '../src/notes/playedNote/playedNoteOnes/PlayedNoteOne'
-import { TrackOne } from '../src/notes/TrackOne'
+import { PlayedNoteMidi } from '../src/notes/playedNote/PlayedNoteMidi'
 import { Midi, Track } from '@tonejs/midi'
 
 describe('From TrackOne to Track', () => {
@@ -8,8 +8,8 @@ describe('From TrackOne to Track', () => {
     PlayedNote.getPlayedNoteFromNoteName('A0', 1, 2),
   ]
   const bpm = 60
-  const trackOne = new TrackOne(playedNotes, bpm)
-  const midiTrackOne = trackOne.getMidiTrack()
+  const playedNoteMidi = new PlayedNoteMidi(playedNotes, bpm)
+  const midiTrackOne = playedNoteMidi.getMidiTrack()
   const midi = new Midi()
   const track = midi.addTrack()
   track.addNote({
@@ -23,7 +23,7 @@ describe('From TrackOne to Track', () => {
     duration: 2,
   })
   it('should have playedNotes', () => {
-    expect(trackOne.playedNotes).toBe(playedNotes)
+    expect(playedNoteMidi.playedNotes).toBe(playedNotes)
   })
   it('should have a midiTrack', () => {
     expect(midiTrackOne).toBeInstanceOf(Track)

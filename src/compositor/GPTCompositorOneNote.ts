@@ -1,7 +1,7 @@
 import NoteOne from '../notes/noteOnes/NoteOne'
 import { IOneNoteAdaptor } from '../APIs/GPTone/Adaptors/IOneNoteAdaptor'
 import { OneNoteMemoryGPToneAdaptor } from '../APIs/GPTone/Adaptors/OneNoteMemoryGPToneAdaptor'
-import { TrackOne } from '../notes/playedNote/PlayedNoteMidi'
+import { PlayedNoteMidi } from '../notes/playedNote/PlayedNoteMidi'
 import PlayedNote from '../notes/playedNote/playedNoteOnes/PlayedNoteOne'
 import { GenericalScale } from '../scales/GenericalScale'
 import { ChromaticScale } from '../scales/Scales'
@@ -15,7 +15,7 @@ export class GPTCompositorOneNote implements CompositorInterface {
     tempo: number = 120,
     scale: GenericalScale = new ChromaticScale(),
     key: NoteOne = NoteOne.noteNameToNote('C4')
-  ): Promise<TrackOne> {
+  ): Promise<PlayedNoteMidi> {
     const playedNotes: PlayedNote[] = []
     const notes: NoteOne[] = scale.getNotes(key, 10)
     const timeBeforeStart = 0
@@ -32,6 +32,6 @@ export class GPTCompositorOneNote implements CompositorInterface {
       console.log(note.getName())
     }
 
-    return new TrackOne(playedNotes, tempo)
+    return new PlayedNoteMidi(playedNotes, tempo)
   }
 }

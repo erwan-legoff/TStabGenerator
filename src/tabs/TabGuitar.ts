@@ -2,7 +2,7 @@ import { FretBoardGuitar } from '../instruments/fretBoards/FretBoardGuitar'
 import { Guitar } from '../instruments/Guitar'
 import { NoteOneInterface } from '../notes/NoteOneInterface'
 import { PlayedNoteInterface } from '../notes/playedNote/PlayedNoteInterface'
-import { TrackOne } from '../notes/playedNote/PlayedNoteMidi'
+import { PlayedNoteMidi } from '../notes/playedNote/PlayedNoteMidi'
 import { ChooseTabLineStrategy } from '../tabLines/chooseTabLineStrategy/ChooseTabLineStrategy'
 import { ChooseTabLineStrategySimple } from '../tabLines/chooseTabLineStrategy/ChooseTabLineStrategySimple'
 import TabLine from '../tabLines/TabLine'
@@ -15,7 +15,7 @@ export class TabGuitar implements Tab {
   private strategy: ChooseTabLineStrategy
   constructor(
     readonly name: string,
-    musicNotes: TrackOne,
+    musicNotes: PlayedNoteMidi,
     guitar: Guitar = new Guitar(new StandardGuitarTuning(), 0),
     strategy: ChooseTabLineStrategy = new ChooseTabLineStrategySimple()
   ) {
@@ -51,7 +51,7 @@ export class TabGuitar implements Tab {
     return strategy.chooseTabLine(note, this.fretBoard.getMusicTabLines())
   }
 
-  private generateMusicFromNotes(musicNotes: TrackOne) {
+  private generateMusicFromNotes(musicNotes: PlayedNoteMidi) {
     musicNotes.getPlayedNotes().forEach((playedNote) => {
       this.addPlayedNote(playedNote, true)
     })
