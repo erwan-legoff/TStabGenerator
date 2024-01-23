@@ -1,6 +1,6 @@
 import NoteOne from '../notes/noteOnes/NoteOne'
 import PlayedNote from '../notes/playedNote/playedNoteOnes/PlayedNoteOne'
-import { PlayedNoteOneInterface } from '../notes/playedNote/PlayedNoteInterface'
+import { PlayedNoteInterface } from '../notes/playedNote/PlayedNoteInterface'
 import { ChooseFretNumberStrategy } from './ChooseFretNumberStrategy/ChooseFretNumberStrategy'
 import { TabNoteInterface } from './TabNoteInterface'
 
@@ -42,7 +42,7 @@ export default class TabNote implements TabNoteInterface {
       maxCaseNumber
     )
   }
-  getPlayedNote(): PlayedNoteOneInterface {
+  getPlayedNote(): PlayedNoteInterface {
     return this.playedNote
   }
   toString(): string {

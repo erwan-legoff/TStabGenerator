@@ -1,6 +1,6 @@
 import NoteOne from '../notes/noteOnes/NoteOne'
 import PlayedNote from '../notes/playedNote/playedNoteOnes/PlayedNoteOne'
-import { PlayedNoteOneInterface } from '../notes/playedNote/PlayedNoteInterface'
+import { PlayedNoteInterface } from '../notes/playedNote/PlayedNoteInterface'
 import { PlayedNoteOneSilence } from '../notes/playedNote/playedNoteOnes/PlayedNoteOneSilence'
 import { ChooseFretNumberStrategySimple } from '../tabs/ChooseFretNumberStrategy/ChooseFretNumberStrategySimple'
 import TabNote from '../tabs/TabNote'
@@ -34,14 +34,14 @@ export default class TabLine {
   }
   // A function to convert a list of notes to a list of tabNotes.
   private fromNotesToTabNotes(
-    notes: PlayedNoteOneInterface[],
+    notes: PlayedNoteInterface[],
     root: NoteOne,
     maxCaseNumber: number,
     mustCorrectTime: boolean = false
   ): TabNote[] {
     const tabNotes: TabNote[] = [] //  On doit ajouter le temps de chaque note précédente
-    var previousNote: PlayedNoteOneInterface = notes[0]
-    var currentNote: PlayedNoteOneInterface = notes[0]
+    var previousNote: PlayedNoteInterface = notes[0]
+    var currentNote: PlayedNoteInterface = notes[0]
     notes.forEach((note) => {
       currentNote = note
       if (currentNote !== previousNote && mustCorrectTime)
@@ -71,7 +71,7 @@ export default class TabLine {
     })
     return tabNotes
   }
-  public addPlayedNote(note: PlayedNoteOneInterface): void {
+  public addPlayedNote(note: PlayedNoteInterface): void {
     if (this.mustCorrectTime) {
       note.addTimeBeforeStart(
         this.melody[this.melody.length - 1].getPlayedNote().getDuration() +

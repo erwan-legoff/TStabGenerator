@@ -1,4 +1,4 @@
-import { PlayedNoteOneInterface } from '../../notes/playedNote/PlayedNoteInterface'
+import { PlayedNoteInterface } from '../../notes/playedNote/PlayedNoteInterface'
 import { PlayedNoteOneSilence } from '../../notes/playedNote/playedNoteOnes/PlayedNoteOneSilence'
 import TabLine from '../../tabLines/TabLine'
 import { Tuning } from '../../tunings/Tuning'
@@ -23,7 +23,7 @@ export class FretBoard {
   }
 
   public addPlayedNote(
-    playedNote: PlayedNoteOneInterface,
+    playedNote: PlayedNoteInterface,
     stringIndex: number,
     silenceOtherStrings: boolean = false
   ): void {

@@ -1,9 +1,7 @@
 import NoteOne from '../../noteOnes/NoteOne'
-import { PlayedNoteOneInterface } from '../PlayedNoteInterface';
+import { PlayedNoteInterface } from '../PlayedNoteInterface'
 
-
-
-export default class PlayedNote implements PlayedNoteOneInterface {
+export default class PlayedNote implements PlayedNoteInterface {
   private note: NoteOne
   private timeBeforeStart: number
   private duration: number

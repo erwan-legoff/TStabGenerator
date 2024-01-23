@@ -115,7 +115,7 @@ export default class NoteAbc implements NoteInterface {
         'The note is longer than one, it may contain unallowed characters'
       )
 
-    const noteIndex = NoteAbc.getNoteIndexFromC(noteLetter)
+    const noteIndex = NoteAbc.getFullNoteIndexFromC(noteLetter)
 
     if (noteIndex === -1) throw new Error('The note name is not valid')
 
@@ -128,10 +128,21 @@ export default class NoteAbc implements NoteInterface {
     return midi
   }
 
-  private static getNoteIndexFromC(noteLetter: string): number {
+  /**
+   * Used to get the index in the European order and with sharps and flats
+   *
+   * @param noteLetter
+   * @returns
+   */
+  private static getFullNoteIndexFromC(noteLetter: string): number {
     return NoteAbc.getNoteNamesFull().indexOf(noteLetter.toUpperCase())
   }
-
+  /**
+   * Used to get the index in the english order with no sharps or flats
+   * It is useful to get the octave, because A and B are an octave lower than C
+   * @param name
+   * @returns
+   */
   private static getNoteIndexFromA(name: string): number {
     return NoteAbc.getNoteNames().indexOf(name.toUpperCase())
   }

@@ -1,6 +1,6 @@
 import { NoteInterface } from '../NoteInterface'
 
-export interface PlayedNoteOneInterface {
+export interface PlayedNoteInterface {
   getNote(): NoteInterface
   getTimeBeforeStart(): number
   getDuration(): number

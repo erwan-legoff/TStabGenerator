@@ -1,6 +1,6 @@
 import NoteOne from '../notes/noteOnes/NoteOne'
 import PlayedNote from '../notes/playedNote/playedNoteOnes/PlayedNoteOne'
-import { PlayedNoteOneInterface } from '../notes/playedNote/PlayedNoteInterface'
+import { PlayedNoteInterface } from '../notes/playedNote/PlayedNoteInterface'
 import { PlayedNoteOneSilence } from '../notes/playedNote/playedNoteOnes/PlayedNoteOneSilence'
 import { TrackOne } from '../notes/TrackOne'
 import { GenericalScale } from '../scales/GenericalScale'
