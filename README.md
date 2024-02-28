@@ -4,7 +4,7 @@ A tiny TypeScript Project to generate pseudo random tabs in MIDI.
 
 # Todo List
 ## Doings
-- [ ] Add a way to generate random musics (dumby)
+
 - [ ] Add a way to generate random musics "smarter" (less repetition, more options, etc.)
 
 ## To do
@@ -14,4 +14,6 @@ A tiny TypeScript Project to generate pseudo random tabs in MIDI.
 
 ## Done
 - [x] Generate clean scales
+- [x] Add a way to generate random musics (dumby)
+- [x] Use my GPTone project to generate tabs with an openai API
 
